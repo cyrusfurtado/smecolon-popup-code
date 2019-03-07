@@ -1,4 +1,5 @@
-window.onload = function() {
+const myInit = function() {
+    console.log('my-test-dashboard-onload');
     setTimeout(function() {
         // window.open('http://localhost:3000/')
 
@@ -12,7 +13,7 @@ window.onload = function() {
         }
 
         console.log('window opened');
-    }, 5000);
+    }, 10000);
 
     const modal_id = 'myModal-xxx125cc';
     const close_icon_id = 'close-sdsdsvs23132'
@@ -39,6 +40,8 @@ window.onload = function() {
     }
     createModal();
 }
-console.log('custom script loaded');
+
+myInit();
+
 
 
