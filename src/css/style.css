@@ -1,0 +1,22 @@
+.custom_si_header{
+    width: 100%;
+    height: 50px;
+    background: #1b2127;
+}
+
+.custom_si_header .custom_si_header_icon{
+    /* display: block; */
+    width: 44px;
+    height: 100%;
+    background-image: url('../assets/si_header_icon.png');
+}
+
+.custom_si_body{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: #e1e4e7;
+}
