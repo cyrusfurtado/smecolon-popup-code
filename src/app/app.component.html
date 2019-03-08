@@ -3,9 +3,9 @@
 
 <div class="inbox-mail">
         <!-- tab content -->
-        <div class="col-md-6 tab-content-in">
-            <div class="tab-pane active text-style" id="tab1">
-                <div class="inbox-right">
+        <div class="col-md-6">
+            <!-- <div class="tab-pane active text-style" id="tab1"> -->
+                <div class="raised-box">
     
                     <div class="mailbox-content">
                         <!-- <div class="mail-toolbar clearfix">
@@ -81,14 +81,14 @@
                         </div> -->
                         <table class="table">
                             <tbody>
-                                <tr *ngFor="let email of emails" class="table-row">
+                                <tr *ngFor="let email of emails" class="table-row" (click)="selectEmail(email)">
                                     <!-- <td class="table-img">
                                         <img src="images/in.jpg" alt="" />
                                     </td> -->
                                     <td class="table-text">
-                                        <h6><span class="title">Name:</span>{{email.namelimited || naText}}</h6>
-                                        <p><span class="title">Subject:</span>{{email.subjectlimited || naText}}</p>
-                                        <p><span class="title">Desc:</span>{{email.desclimited || naText}}</p>
+                                        <h6><span class="title">Name: </span>{{email.namelimited || naText}}</h6>
+                                        <p><span class="title">Subject: </span>{{email.subjectlimited || naText}}</p>
+                                        <p><span class="title">Desc: </span>{{email.desclimited || naText}}</p>
                                         <!-- <p>sdasnalskcnalsknal akslanlkasnasmxlaskndal skannlsdnaklnx sdnaslkdnnalxkl  xnskanax ksalx askl xksnlasnkln sdanlscalsknalsknfalnk casknalsnkalblk</p> -->
                                     </td>
                                     <!-- <td>
@@ -107,7 +107,18 @@
                         </table>
                     </div>
                 </div>
+            <!-- </div> -->
+        </div>
+        
+        <div [hidden]="!selectedEmail" class="col-md-6">
+            <div class="raised-box">
+                    <h4><span class="title">Name: </span>{{selectedEmail.name || naText}}</h4>
+                    <p><span class="title">Subject: </span>{{selectedEmail.subject || naText}}</p>
+                    <p><span class="title">Desc: </span>{{selectedEmail.desc || naText}}</p>
+                    <div class="button-container">
+                        <button type="button" class="btn btn-lg btn-primary">Analyze</button>
+                    </div>
             </div>
         </div>
-        <div class="clearfix"> </div>
-    </div>
+        <!-- <div class="clearfix"> </div> -->
+</div>

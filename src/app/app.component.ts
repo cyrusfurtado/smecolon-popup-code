@@ -19,6 +19,7 @@ export interface Emails {
 export class AppComponent {
   naText = '--';
   emails: Array<Emails> = [];
+  selectedEmail: Emails;
 
   constructor(private app: AppServiceService, private limitText: LimitTextPipe) {
     this.app.getEmails().subscribe((data: {emails: Array<Emails>}) => {
@@ -31,5 +32,9 @@ export class AppComponent {
         })
       }) : [];
     });
+  }
+
+  selectEmail(email: Emails) {
+    this.selectedEmail = email;
   }
 }
