@@ -28,11 +28,45 @@
         -ms-border-radius: 4px;
         -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
         box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        &.mail-description{
+            .title{
+                color: #999;  
+            }
+            .date-wrapper{
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }  
+        }
         .button-container{
             position: absolute;
             bottom: 1rem;
             right: 1.8em;
         }
+    }
+}
+
+.custom__si__loader{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    .image__container{
+        width: 70px;
+        height: 70px;
+        flex: 0 0 auto;
+        background-image: url('../assets/images/SI_loading.gif')
+    }
+    .loader-message{
+        color: #fff;
+        font-weight: 600;
+        font-size: 2rem;
     }
 }
 

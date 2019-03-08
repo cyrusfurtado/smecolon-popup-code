@@ -1,5 +1,6 @@
 html, body{
     box-sizing: border-box;
+    height:100%;
 }
 
 .custom_si_header{
@@ -26,5 +27,6 @@ html, body{
     right: 0;
     bottom: 0; */
     /* width: 100%; */
+    height: 100%;
     background: #e1e4e7;
 }

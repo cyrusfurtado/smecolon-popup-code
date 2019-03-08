@@ -10,6 +10,6 @@ export class AppServiceService {
   constructor(private http: HttpClient) { }
 
   getEmails(): Observable<any> {
-    return this.http.get('http://demo9395320.mockable.io/');
+    return this.http.get('http://192.168.43.247:4567/mails');
   }
 }
