@@ -36,7 +36,13 @@
                 position: absolute;
                 top: 1rem;
                 right: 1rem;
-            }  
+            }
+            .description{
+                height: 30rem;
+                white-space: wrap;
+                overflow-x: auto;
+            }
+            // height: 50rem;  
         }
         .button-container{
             position: absolute;
