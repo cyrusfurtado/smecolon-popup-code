@@ -49,6 +49,13 @@
         }
     }
 
+    .resume-panel{
+        &.disabled{
+            pointer-events: none;
+            filter: grayscale(1);
+        }
+    }
+
     .resume-table{
         width: 100%;
         .row{

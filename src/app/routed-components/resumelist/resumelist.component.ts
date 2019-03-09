@@ -49,12 +49,14 @@ export class ResumelistComponent implements OnInit {
     // setTimeout(() => {
     //   this.counter('stop');
     // }, 62000);
+    this.app.loaderEvent.emit({hideloader: false});
     this.app.getResumes().subscribe((data: Array<Resume>) => {
       console.log('getResumes', data);
       this.resumes = data;
       this.resumes.map((val: Resume) => {
         val.preferedTag = Math.floor(Math.random() * 4);
         val.call_status = CallStatus.pending;
+        this.app.loaderEvent.emit({hideloader: true});
       });
     });
   }

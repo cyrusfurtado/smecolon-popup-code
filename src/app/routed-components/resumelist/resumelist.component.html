@@ -1,5 +1,5 @@
 <div class="resumes-wrapper">
-    <div class="col-md-9 resume-panel">
+    <div class="col-md-9 resume-panel" [class.disabled]="selectedResume.isActive">
         <!-- <div class="resume-list-item">
             <div class="icon"><i class="fa fa-inbox"></i></div>
             <div class="desc">
@@ -35,7 +35,7 @@
                     <th>
                         Technologies
                     </th>
-                    <th width="25%">Tags</th>
+                    <th width="20%">Tags</th>
                     <th>
                         Job title
                     </th>
@@ -46,7 +46,11 @@
             </thead>
             <tbody>
                 <tr (click)="selectResume(resume)" *ngFor="let resume of resumes" [class.active]="resume.isActive">
-                    <td class="noRightPadding"><img class="profilePic" src="https://placeimg.com/400/400/people" alt="" width="35"/></td>
+                    <td>
+                        <div class="profilePic">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </div>
+                    </td>
                     <td class="noLeftPadding">
                         <div class="nameTxt">{{ resume.firstName || naText }} {{resume.lastName || naText}}</div>
                         <div class="sec_nameTxt">{{ resume.email || naText }}</div>
