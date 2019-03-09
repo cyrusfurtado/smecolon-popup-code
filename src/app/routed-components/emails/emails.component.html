@@ -115,7 +115,7 @@
                     <h4><span class="title">Subject: </span>{{selectedEmail.subject || naText}}</h4>
                     <!-- <h5><span class="title">Desc: </span></h5> -->
                     <br/>
-                    <div [innerHTML]="selectedEmail.body || naText"></div>
+                    <div class="description" [innerHTML]="selectedEmail.body || naText"></div>
                     <div class="button-container">
                         <button (click)="analyzeMail()" type="button" class="btn btn-lg btn-primary">Analyze</button>
                     </div>

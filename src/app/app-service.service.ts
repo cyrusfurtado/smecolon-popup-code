@@ -12,10 +12,12 @@ export interface LoaderEvent {
 })
 export class AppServiceService {
 
+  apiHost = 'http://10.244.25.148:4567';
   loaderEvent = new EventEmitter<LoaderEvent>();
+  
   constructor(private http: HttpClient) { }
-
+  
   getEmails(): Observable<any> {
-    return this.http.get('http://10.244.25.36:4567/mails');
+    return this.http.get(`${this.apiHost}/mails`);
   }
 }
