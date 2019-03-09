@@ -1,6 +1,6 @@
 <div class="ticket-wrapper">
   <div class="col-md-12">
-    <table class="table">
+    <table class="table table-sm">
       <thead>
         <tr>
           <th>
@@ -27,29 +27,29 @@
         </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let ticket of ticketList">
-            <td>
-              {{ticket.id || naText}}
-            </td>
-            <td>
-              {{ticket.submit_date || naText}}
-            </td>
-            <td>
-              {{ticket.categorization || naText}}
-            </td>
-            <td>
-              {{ticket.support_org || naText}}
-            </td>
-            <td>
-              {{ticket.support_group || naText}}
-            </td>
-            <td>
-              {{ticket.priority || naText}}
-            </td>
-            <td>
-              {{ticket.status || naText}}
-            </td>
-          </tr>
+        <tr *ngFor="let ticket of ticketList">
+          <td>
+            {{ticket.id || naText}}
+          </td>
+          <td>
+            {{ticket.submit_date || naText}}
+          </td>
+          <td>
+            {{ticket.categorization || naText}}
+          </td>
+          <td>
+            {{ticket.support_org || naText}}
+          </td>
+          <td>
+            {{ticket.support_group || naText}}
+          </td>
+          <td>
+            {{ticket.priority || naText}}
+          </td>
+          <td>
+            {{ticket.status || naText}}
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>

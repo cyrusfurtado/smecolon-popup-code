@@ -1,5 +1,5 @@
 import { Component, NgZone } from '@angular/core';
-import { AppServiceService, LoaderEvent } from './app-service.service';
+import { AppServiceService, LoaderEvent, NoteEvent } from './app-service.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,7 @@ export class AppComponent {
   showNotification = false;
   hideLoader = true;
   modalMessage: string;
+  noteMessage: string;
 
   constructor(private app: AppServiceService, private zone: NgZone) {
     this.app.loaderEvent.subscribe((data: LoaderEvent) => {
@@ -27,8 +28,9 @@ export class AppComponent {
       this.zone.run(() => {});
     });
 
-    this.app.noteEvent.subscribe((status) => {
-      this.showNotification = status;
+    this.app.noteEvent.subscribe((status: NoteEvent) => {
+      this.showNotification = status.show;
+      this.noteMessage = status.message;
       if(this.showNotification) {
         setTimeout(() => {
           this.showNotification = false;
