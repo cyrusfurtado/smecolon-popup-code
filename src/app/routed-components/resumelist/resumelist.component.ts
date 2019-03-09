@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppServiceService } from '../../app-service.service';
+import { RemoveSpecialCharsPipe } from '../../pipes/remove-special-chars.pipe';
 
 export interface Resume  {
   resumeId: string,
@@ -39,7 +40,7 @@ export class ResumelistComponent implements OnInit {
   selectedResume: Resume;
   callstatus = CallStatus;
 
-  constructor(private app: AppServiceService) { }
+  constructor(private app: AppServiceService, private formatString: RemoveSpecialCharsPipe) { }
   
   countTimer: any;
   ngOnInit() {
@@ -54,6 +55,11 @@ export class ResumelistComponent implements OnInit {
       console.log('getResumes', data);
       this.resumes = data;
       this.resumes.map((val: Resume) => {
+        Object.keys(val).map((key) => {
+          if(typeof val[key] === 'string'){
+            val[key] = this.formatString.transform(val[key]);
+          }
+        });
         val.preferedTag = Math.floor(Math.random() * 4);
         val.call_status = CallStatus.pending;
         this.app.loaderEvent.emit({hideloader: true});
