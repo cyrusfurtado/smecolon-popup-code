@@ -1,5 +1,5 @@
-<div class="resumes-wrapper">
-    <div class="col-md-9 resume-panel" [class.disabled]="selectedResume.isActive">
+<div [ngStyle]="{'display': resumes ? null : 'none'}" class="resumes-wrapper">
+    <div class="col-md-9 resume-panel" [class.disabled]="selectedResume && selectedResume.isActive">
         <!-- <div class="resume-list-item">
             <div class="icon"><i class="fa fa-inbox"></i></div>
             <div class="desc">
@@ -91,6 +91,9 @@
             <!--div class="call-button">
                 <i class="fa fa-phone"></i>
             </div-->
+        </div>
+        <div class="call-placeholder">
+            Please select a resume from the list.
         </div>
     </div>  
 </div>

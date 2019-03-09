@@ -42,7 +42,7 @@ export class EmailsComponent {
       const updated_data = this.getNeha(data);
       this.emails = updated_data ? updated_data.map((email) => {
         Object.keys(email).map((key) => {
-          if(typeof email[key] === 'string'){
+          if(typeof email[key] === 'string' && key !== 'body'){
             email[key] = this.removeSpeChars.transform(email[key]);
           }
         });

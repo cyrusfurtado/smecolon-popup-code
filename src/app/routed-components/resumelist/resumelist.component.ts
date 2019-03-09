@@ -102,6 +102,7 @@ export class ResumelistComponent implements OnInit {
   onCallEnd() {
     this.selectedResume.isActive = false;
     this.selectedResume.call_status = CallStatus.complete;
+    this.selectedResume = null;
     this.counter('stop');
   }
 }
