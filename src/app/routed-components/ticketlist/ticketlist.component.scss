@@ -1,4 +1,7 @@
-.ticket-wrapper{
-    display: flex;
-    padding: 1rem;
+.ticket-wrapper[_ngcontent-c1] {
+  display: flex;
+  padding: 1rem;
+  background-color: white;
+  margin: 10px;
+  box-shadow: #ccc 2px 2px;
 }
