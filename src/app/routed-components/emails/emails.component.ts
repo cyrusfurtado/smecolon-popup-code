@@ -46,6 +46,14 @@ export class EmailsComponent {
           if(typeof email[key] === 'string' && key !== 'body'){
             email[key] = this.removeSpeChars.transform(email[key]);
           }
+
+          if(key === 'from') {
+            if(email[key].indexOf('@') > -1) {
+              const parts = email[key].split('@');
+              email.namelimited = this.titlecase.transform(parts[0]);
+            }
+            
+          }
         });
 
         // try{
