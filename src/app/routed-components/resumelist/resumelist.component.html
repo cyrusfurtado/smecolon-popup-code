@@ -32,7 +32,7 @@
                     <th colspan="2">
                         Basic Info
                     </th>
-                    <th>
+                    <th width="15%">
                         Technologies
                     </th>
                     <th width="20%">Tags</th>
@@ -46,7 +46,7 @@
             </thead>
             <tbody>
                 <tr (click)="selectResume(resume)" *ngFor="let resume of resumes" [class.active]="resume.isActive">
-                    <td class="noRightPadding">
+                    <td>
                         <div class="profilePic">
                             <i class="fa fa-user" aria-hidden="true"></i>
                         </div>

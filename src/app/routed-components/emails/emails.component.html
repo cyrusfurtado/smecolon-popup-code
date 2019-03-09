@@ -112,7 +112,7 @@
             <div *ngIf="selectedEmail" class="col-md-8 noLeftPadding">
                 <div class="raised-box mail-description">
                     <div class="emailsender_Info">
-                        <div class="emailSenderName">Sender Name</div>
+                        <div class="emailSenderName">{{ selectedEmail.namelimited || naText }}</div>
                         <div class="emailSenderId">{{selectedEmail.from || naText}}</div>
                         <div class="date-wrapper">
                             <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -139,25 +139,30 @@
 
 <div [ngStyle]="{display: showModal ? null : 'none'}" class="modal-wrapper">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
-                <!-- <h2 class="modal-title">Modal title</h2> -->
-            </div>
+        <div class="modal-content"> 
             <div class="modal-body">
-                <div>analysis complete. Here are the findings: </div>
+                <div>Analysis complete. Here are the findings: </div>
                 <div class="ticket-type-wrapper">
-                        <button type="button" class="btn btn-primary">
-                                Category <span class="badge badge-primary">Human Resources Recruitment Module</span>
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                                Impact <span class="badge badge-light">4</span>
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                                Severity<span class="badge badge-warning">5</span>
-                        </button> 
+                        <table class="table">
+                            <tr>
+                                <td>Category</td>
+                                <td>Human Resources</td>
+                            </tr>
+                            <tr>
+                                <td>Sub-category</td>
+                                <td>Recruitment</td>
+                            </tr>
+                            <tr>
+                                <td>Impact</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Severity</td>
+                                <td>5</td>
+                            </tr>
+                        </table> 
                 </div>
-                <div>Do you want to rise a ticket?</div>
+                <div class="modalQuestion">Do you want to rise a ticket?</div>
             </div>
             <div class="modal-footer">
                 <button (click)="hideModal()" type="button" class="btn btn-default" data-dismiss="modal">No</button>
