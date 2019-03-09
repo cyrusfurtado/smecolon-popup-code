@@ -112,7 +112,7 @@
             <div *ngIf="selectedEmail" class="col-md-8 noLeftPadding">
                 <div class="raised-box mail-description">
                     <div class="emailsender_Info">
-                        <div class="emailSenderName">Sender Name</div>
+                        <div class="emailSenderName">{{ selectedEmail.namelimited || naText }}</div>
                         <div class="emailSenderId">{{selectedEmail.from || naText}}</div>
                         <div class="date-wrapper">
                             <i class="fa fa-clock-o" aria-hidden="true"></i>
