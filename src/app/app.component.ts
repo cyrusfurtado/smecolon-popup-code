@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppServiceService } from './app-service.service';
 import { LimitTextPipe } from './pipes/limit-text.pipe';
+import * as moment from 'moment';
 
 export interface Emails {
   mailId: string;
@@ -33,6 +34,7 @@ export class AppComponent {
   selectedEmail: Emails;
 
   constructor(private app: AppServiceService, private limitText: LimitTextPipe) {
+    console.log('moment', moment(new Date()).format('DD MM YYYY'));
     const getData = (data) => {
       this.emails = data ? data.map((email) => {
         var desc: string;
@@ -55,8 +57,8 @@ export class AppComponent {
       }) : [];
       this.hideLoader = true;
     }
-    // this.app.getEmails().subscribe(getData);
-    getData([{"mailId":"14","createdAt":"2019-03-08T09:17:17.577Z","subject":"An email","date":"Thu, 4 Mar 2010 15:35:32 -0800","from":"george@foo.com","to":"paul@goo.com","sender":"paul@goo.com","body":"<p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna?</p><p>Aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse.</p><p>Cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est.</p><p>Laborum sed ut perspiciatis unde omnis iste natus error sit. Voluptatem accusantium doloremque laudantium totam.</p><p>Rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>"},{"mailId":"15","createdAt":"2019-03-08T09:17:18.407Z","subject":"An email","date":"Thu, 4 Mar 2010 15:35:32 -0800","from":"george@foo.com","to":"paul@goo.com","sender":"paul@goo.com","body":"<p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna?</p><p>Aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse.</p><p>Cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est.</p><p>Laborum sed ut perspiciatis unde omnis iste natus error sit. Voluptatem accusantium doloremque laudantium totam.</p><p>Rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>"}]);
+    this.app.getEmails().subscribe(getData);
+    // getData([{"mailId":"14","createdAt":"2019-03-08T09:17:17.577Z","subject":"An email","date":"Thu, 4 Mar 2010 15:35:32 -0800","from":"george@foo.com","to":"paul@goo.com","sender":"paul@goo.com","body":"<p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna?</p><p>Aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse.</p><p>Cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est.</p><p>Laborum sed ut perspiciatis unde omnis iste natus error sit. Voluptatem accusantium doloremque laudantium totam.</p><p>Rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>"},{"mailId":"15","createdAt":"2019-03-08T09:17:18.407Z","subject":"An email","date":"Thu, 4 Mar 2010 15:35:32 -0800","from":"george@foo.com","to":"paul@goo.com","sender":"paul@goo.com","body":"<p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna?</p><p>Aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse.</p><p>Cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est.</p><p>Laborum sed ut perspiciatis unde omnis iste natus error sit. Voluptatem accusantium doloremque laudantium totam.</p><p>Rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>"}]);
   }
 
   selectEmail(email: Emails) {
