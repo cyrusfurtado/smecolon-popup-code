@@ -13,13 +13,10 @@
             Categorization
           </th>
           <th>
-            Assignee Support Organization
+            Sub categorization
           </th>
           <th>
-            Assignee Support Group
-          </th>
-          <th>
-            Priority
+            Impact
           </th>
           <th>
             Status
@@ -27,24 +24,21 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let ticket of ticketList">
+        <tr class="ticket-row" (click)="rowSelected(ticket)" *ngFor="let ticket of ticketList">
           <td>
-            {{ticket.id || naText}}
+            TICKET0000541{{ticket.ticketId || naText}}
           </td>
           <td>
-            {{ticket.submit_date || naText}}
+            {{ticket.createdAt || naText}}
           </td>
           <td>
-            {{ticket.categorization || naText}}
+            {{ticket.category || naText}}
           </td>
           <td>
-            {{ticket.support_org || naText}}
+            {{ticket.subcategory || naText}}
           </td>
           <td>
-            {{ticket.support_group || naText}}
-          </td>
-          <td>
-            {{ticket.priority || naText}}
+            {{ticket.impact || naText}}
           </td>
           <td>
             {{ticket.status || naText}}

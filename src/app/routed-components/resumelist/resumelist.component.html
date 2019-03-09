@@ -1,5 +1,5 @@
 <div class="resumes-wrapper">
-    <div class="col-md-9 resume-panel" [class.disabled]="selectedResume && selectedResume.isActive">
+    <div class="col-sm-9 resume-panel" [class.disabled]="selectedResume && selectedResume.isActive">
         <!-- <div class="resume-list-item">
             <div class="icon"><i class="fa fa-inbox"></i></div>
             <div class="desc">
@@ -75,7 +75,7 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-3 call-panel">
+    <div class="col-sm-3 call-panel">
         <div (click)="onCallEnd()" *ngIf="selectedResume" class="call-details">
             <div class="call-status">Outgoing call</div>
             <div class="call-name">{{ selectedResume.firstName || naText }} {{ selectedResume.lastName || naT
@@ -92,7 +92,7 @@
                 <i class="fa fa-phone"></i>
             </div-->
         </div>
-        <div class="call-placeholder">
+        <div *ngIf="!selectedResume" class="call-placeholder">
             Please select a resume from the list.
         </div>
     </div>  

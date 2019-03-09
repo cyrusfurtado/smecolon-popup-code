@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppServiceService } from '../../app-service.service';
+import { Router } from '@angular/router';
 
 export interface TicketList {
   ticketId: string,
@@ -23,7 +24,7 @@ export interface TicketList {
 export class TicketlistComponent implements OnInit {
   naText = '--';
   ticketList: Array<TicketList>;
-  constructor(private app: AppServiceService) { }
+  constructor(private app: AppServiceService, private route: Router) { }
 
   ngOnInit() {
     this.app.geTickets().subscribe((data: Array<TicketList>) => {
@@ -31,4 +32,7 @@ export class TicketlistComponent implements OnInit {
     });
   }
 
+  rowSelected(ticket: TicketList) { 
+    this.route.navigate(['/ticketdetail', ticket]);
+  }
 }

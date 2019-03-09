@@ -4,4 +4,10 @@
   background-color: white;
   margin: 10px;
   box-shadow: #ccc 2px 2px;
+  .ticket-row{
+    cursor: pointer;
+    &:hover{
+      background-color: rgba(0,0,0,.075);
+    }
+  }
 }
