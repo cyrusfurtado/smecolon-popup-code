@@ -1,103 +1,95 @@
-.resumes-wrapper{
-    display: flex;
+.resumes-wrapper {
+  display: flex;
+  padding: 1rem;
+  .resume-list-item {
+    position: relative;
+    cursor: pointer;
+    background-color: #fff;
     padding: 1rem;
-    height: 40rem;
-    .resume-list-item{
-        position: relative;
-        cursor: pointer;
-        background-color: #fff;
-        padding: 1rem;
-        border: 1px solid #ebeff6;
-        border-radius: 4px;
-        -webkit-border-radius: 4px;
-        -o-border-radius: 4px;
-        -moz-border-radius: 4px;
-        -ms-border-radius: 4px;
-        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-        box-shadow: 0 1px 1px rgba(0,0,0,.05);
-        // height: 2rem;
-        display: flex;
-        flex-flow: row nowrap;
+    border: 1px solid #ebeff6;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05); // height: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    color: rgb(153, 153, 153);
+    .icon {
+      flex: 0 0 2rem;
+      color: rgb(153, 153, 153);
+    }
+    .desc {
+      color: #000;
+      .title {
         color: rgb(153, 153, 153);
-        .icon{
-            flex: 0 0 2rem;
-            color: rgb(153, 153, 153);
-        }
-        .desc{
-            color: #000;
-            .title{
-                color: rgb(153, 153, 153);
-            }
-            flex: 0 0 25rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .contact{
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-        }
-        .call-icon{
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            border-radius: 30%;
-            border: 1px solid #0f0;
-        }
-        &:hover{
-            background: #FAFAFA;
-        }
+      }
+      flex: 0 0 25rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-
-    .resume-panel{
-        overflow: auto;
-        &.disabled{
-            pointer-events: none;
-            filter: grayscale(1);
-        }
+    .contact {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
     }
-
-    .resume-table{
-        width: 100%;
-        .row{
-            background-color: #fff;
-            padding: 1rem;
-            border: 1px solid #ebeff6;
-            border-radius: 4px;
-            -webkit-border-radius: 4px;
-            -o-border-radius: 4px;
-            -moz-border-radius: 4px;
-            -ms-border-radius: 4px;
-            -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-            box-shadow: 0 1px 1px rgba(0,0,0,.05);
-            .cell{
-                width:25%;
-            }
-        }
-
-        .statusTxt{
-            .status_pending{
-                &.complete{
-                    color: #006e00;
-                }
-            }
-        }
-          
+    .call-icon {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      border-radius: 30%;
+      border: 1px solid #0f0;
     }
-
-    .call-details{
-        .call-button{
-            .fa-phone{
-                cursor: pointer;
-            }
+    &:hover {
+      background: #FAFAFA;
+    }
+  }
+  .resume-panel {
+    &.disabled {
+      pointer-events: none;
+      filter: grayscale(1);
+    }
+  }
+  .resume-table {
+    width: 100%;
+    .row {
+      background-color: #fff;
+      padding: 1rem;
+      border: 1px solid #ebeff6;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -o-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+      .cell {
+        width: 25%;
+      }
+    }
+    .statusTxt {
+      .status_pending {
+        &.complete {
+          color: #006e00;
         }
+      }
     }
-
-    .call-placeholder{
-        font-weight: 600;
-        font-size: 2rem;
-        padding-top: 10rem;
-        text-align: center;
+  }
+  .call-details {
+    .call-button {
+      margin-top: 40px;
+      a {
+        color: white;
+        cursor: pointer;
+      }
     }
+  }
+  .call-placeholder {
+    font-weight: 600;
+    font-size: 2rem;
+    padding-top: 10rem;
+  }
 }
