@@ -1,8 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <router-outlet></router-outlet>
-<!-- <div [hidden]="isAnalyzed"> -->
-<!-- <div [hidden]="!(isAnalyzed && showPage2)" class="resumes-wrapper"> -->
-<div [hidden]="hideLoader" class="custom__si__loader">
+<div [ngStyle]="{'display': hideLoader ? 'none': null}" class="custom__si__loader">
     <div class="image__container">
     </div>
     <div [hidden]="!modalMessage" class="loader-message">
