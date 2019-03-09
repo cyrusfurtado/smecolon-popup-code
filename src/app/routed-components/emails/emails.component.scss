@@ -115,6 +115,7 @@
 }
 
 .AnalyseBtn{ font-size: 15px; border-radius: 5px;}
+.ticket-type-wrapper .btn{ margin-right: 5px; margin-bottom: 5px;}
 
 .modal-wrapper{
     position: fixed;
@@ -124,11 +125,25 @@
     right: 0;
     background-color: rgba(0,0,0,0.5);
     .modal-dialog{
-        top: 20rem;
+        top: 5rem;
+        font-size: 15px;
+        color: #565050;
+        padding-top:25px;
         .ticket-type-wrapper{
-            padding-left: 5rem;
+            /*padding-left: 5rem;*/
             padding-top: 1rem;
+            text-align: left;
+            .table{
+                border-right: 1px solid #dee2e6;
+                border-left: 1px solid #dee2e6;
+                border-bottom: 1px solid #dee2e6;
+            }
         }
     }
 }
+.modal-footer{ border-top:none; padding-top: 0;}
+.badgesDiv{ padding-top: 10px;}
+.modalQuestion{ padding-top: 20px; text-align: right;}
+
+
 
