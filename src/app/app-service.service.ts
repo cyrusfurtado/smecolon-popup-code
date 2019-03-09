@@ -43,4 +43,8 @@ export class AppServiceService {
     return this.http.get(`${this.apiHost}/raiseTicket`);
   }
 
+  geTickets() {
+    return this.http.get(`${this.apiHost}/tickets`);
+  }
+
 }
