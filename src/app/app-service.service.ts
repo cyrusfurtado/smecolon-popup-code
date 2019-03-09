@@ -7,6 +7,11 @@ export interface LoaderEvent {
   message?: string;
 }
 
+export interface NoteEvent{
+  show: boolean;
+  message: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +19,7 @@ export class AppServiceService {
 
   apiHost = 'http://10.244.25.148:4567';
   loaderEvent = new EventEmitter<LoaderEvent>();
-  noteEvent = new EventEmitter<boolean>();
+  noteEvent = new EventEmitter<NoteEvent>();
 
   constructor(private http: HttpClient) { }
   
@@ -32,6 +37,10 @@ export class AppServiceService {
 
   analyzePoll() {
     return this.http.get(`${this.apiHost}/analyze/poll`);
+  }
+
+  raiseTicket() {
+    return this.http.get(`${this.apiHost}/raiseTicket`);
   }
 
 }
