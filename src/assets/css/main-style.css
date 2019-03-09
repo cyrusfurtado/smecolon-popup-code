@@ -36,6 +36,18 @@ html, body{
     background-color: #ffffff;
 
 }
+
+.resume-panel .table td, 
+.resume-panel .table>tbody>tr>td, 
+.resume-panel .table>tbody>tr>th, 
+.resume-panel .table>tfoot>tr>td,
+.resume-panel .table>tfoot>tr>th, 
+.resume-panel .table>thead>tr>td, 
+.resume-panel .table>thead>tr>th{
+    color: #252525;
+}
+
+
 .call-panel{
     background: rgba(21,122,114,1);
 background: -moz-linear-gradient(top, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 35%, rgba(255,255,255,1) 100%);
@@ -54,7 +66,7 @@ color: #ffffff;
 }
 .call-details{ text-align: center; padding-top: 100px;}
 .call-status{ font-size: 12px; padding-bottom: 10px;}
-.call-name{ font-size: 15px; font-weight: bold; }
+.call-name{ font-size: 15px; font-weight: bold;  padding-bottom: 10px; }
 .call-counter{ font-size: 12px; padding-bottom: 20px;}
 .call-user-icon{}
 .call-animation{}
@@ -67,6 +79,7 @@ color: #ffffff;
     padding:10px;
     border-radius: 50%;
     font-size: 40px;
+    margin-top: 20px;
   } 
 
   .call-animation {
