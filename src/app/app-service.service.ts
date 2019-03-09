@@ -27,7 +27,7 @@ export class AppServiceService {
   }
 
   analyzeEmail() {
-    return this.http.get(`${this.apiHost}/analyze`);
+    return this.http.get(`${this.apiHost}/resumesAnalyse`);
   }
 
   analyzePoll() {

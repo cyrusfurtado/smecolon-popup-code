@@ -30,6 +30,7 @@ export class EmailsComponent {
   naText = '--';
   emails: Array<Emails> = [];
   selectedEmail: Emails;
+  showModal: boolean;
 
   constructor(private app: AppServiceService, private limitText: LimitTextPipe, private route: Router) {
     console.log('moment', moment(new Date()).format('DD MM YYYY'));
@@ -70,32 +71,37 @@ export class EmailsComponent {
   analyzeMail() {
     this.app.loaderEvent.emit({hideloader: false});
     let count = 0;
+
+    const stoploading = () => {
+      clearInterval(this.pollTimer);
+      this.app.loaderEvent.emit({hideloader: true});
+      this.app.noteEvent.emit(true);
+    }
+
     const callback = () => {
       // console.log('ffsfasf', count);
-      this.modalMessage = this.messages[count];
+      this.modalMessage = this.messages[count] ? this.messages[count] : this.modalMessage;
       this.app.loaderEvent.emit({hideloader: undefined, message: this.modalMessage});
 
-      this.app.analyzePoll().subscribe((data: any) => {
-        if(data.status === 'ok') {
-          clearInterval(this.pollTimer);
-          // this.app.loaderEvent.emit({hideloader: true});
-          this.app.noteEvent.emit(true);
-          // show notification
-        }
-      });
-      // if (count >= this.messages.length) {
-        // this.modalMessage = '';
-        // this.app.loaderEvent.emit({hideloader: true});
-        // this.route.navigateByUrl('/resumelist');
-        // clearInterval(timer);
-      // }
+      // this.app.analyzePoll().subscribe((data: any) => {
+      //   if(data.status === 'ok') {
+      //     stoploading();
+      //     // show notification
+      //   }
+      // });
       count++;
     }
 
+    callback();
+    this.pollTimer = setInterval(callback, 5000);
     this.app.analyzeEmail().subscribe(() => {
-      callback();
-      this.pollTimer = setInterval(callback, 5000);
+      stoploading();
+      this.showModal = true;
     });
     // this.app.anaALyze()
+  }
+
+  hideModal(){
+    this.showModal = false;
   }
 }
