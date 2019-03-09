@@ -20,4 +20,13 @@ export class AppServiceService {
   getEmails(): Observable<any> {
     return this.http.get(`${this.apiHost}/mails`);
   }
+
+  analyzeEmail() {
+    return this.http.get(`${this.apiHost}/analyze`);
+  }
+
+  analyzePoll() {
+    return this.http.get(`${this.apiHost}/analyze/poll`);
+  }
+
 }
