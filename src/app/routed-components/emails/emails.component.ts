@@ -102,37 +102,43 @@ export class EmailsComponent {
   }
 
   pollTimer;
+  pollCount = 0;
   analyzeMail() {
     this.app.loaderEvent.emit({hideloader: false});
-    let count = 0;
-
-    const stoploading = () => {
-      clearInterval(this.pollTimer);
-      this.app.loaderEvent.emit({hideloader: true});
-      this.app.noteEvent.emit(true);
-    }
-
-    const callback = () => {
-      // console.log('ffsfasf', count);
-      this.modalMessage = this.messages[count] ? this.messages[count] : this.modalMessage;
-      this.app.loaderEvent.emit({hideloader: undefined, message: this.modalMessage});
-
-      // this.app.analyzePoll().subscribe((data: any) => {
-      //   if(data.status === 'ok') {
-      //     stoploading();
-      //     // show notification
-      //   }
-      // });
-      count++;
-    }
-
-    callback();
-    this.pollTimer = setInterval(callback, 5000);
     this.app.analyzeEmail().subscribe(() => {
-      stoploading();
-      this.showModal = true;
+      setTimeout(() => {
+        this.stoploading();
+        this.showModal = true;
+      }, 5000); 
     });
-    // this.app.anaALyze()
+  }
+
+  stoploading() {
+    this.pollCount = 0;
+    clearInterval(this.pollTimer);
+    this.app.loaderEvent.emit({hideloader: true});
+  }
+
+  callback() {
+    // console.log('ffsfasf', count);
+    this.modalMessage = this.messages[this.pollCount] ? this.messages[this.pollCount] : this.modalMessage;
+    this.app.loaderEvent.emit({hideloader: undefined, message: this.modalMessage});
+    this.pollCount++;
+  }
+
+  acceptModal() {
+    this.hideModal();
+
+    this.app.loaderEvent.emit({hideloader: false});
+    this.callback();
+    this.pollTimer = setInterval(this.callback.bind(this), 5000);
+
+    this.app.raiseTicket().subscribe(() => {
+      setTimeout((data) => {
+        this.stoploading();
+        this.app.noteEvent.emit({show: true, message: 'IND42942093572057209'});
+      }, 15000);
+    });
   }
 
   hideModal(){
