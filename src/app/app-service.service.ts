@@ -17,7 +17,7 @@ export interface NoteEvent {
 })
 export class AppServiceService {
 
-  apiHost = 'http://10.244.54.35:4567';
+  apiHost = 'http://10.244.25.148:4567';
   loaderEvent = new EventEmitter<LoaderEvent>();
   noteEvent = new EventEmitter<NoteEvent>();
 
@@ -41,6 +41,14 @@ export class AppServiceService {
 
   raiseTicket() {
     return this.http.get(`${this.apiHost}/raiseTicket`);
+  }
+
+  geTickets() {
+    return this.http.get(`${this.apiHost}/tickets`);
+  }
+
+  getTicketDetails(id: string) {
+    return this.http.get(`${this.apiHost}/mails/${id}`);
   }
 
 }

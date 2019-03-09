@@ -1,13 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { AppServiceService } from '../../app-service.service';
+import { Router } from '@angular/router';
 
-export interface ResumeListItem {
-  id: string;
-  submit_date: string;
-  categorization: string;
-  support_org: string;
-  support_group: string;
-  priority: string;
-  status: string
+export interface TicketList {
+  ticketId: string,
+  createdAt: string,
+  type: string,
+  summary: string,
+  mailId: string,
+  status: string,
+  category: string,
+  subcategory: string,
+  impact: string,
+  sla: string,
+  op: string
 }
 
 @Component({
@@ -17,30 +23,16 @@ export interface ResumeListItem {
 })
 export class TicketlistComponent implements OnInit {
   naText = '--';
-  ticketList: Array<ResumeListItem>;
-  constructor() { }
+  ticketList: Array<TicketList>;
+  constructor(private app: AppServiceService, private route: Router) { }
 
   ngOnInit() {
-    this.ticketList = [
-      {
-        id: '4422352',
-        submit_date: '02/03/2019',
-        categorization: 'Human Resource',
-        support_org: 'Human Resource',
-        support_group: 'Admin-Space Management',
-        priority: 'Medium',
-        status: 'Completed'
-      },
-      {
-        id: '5352352',
-        submit_date: '04/03/2019',
-        categorization: 'Human Resource',
-        support_org: 'Enterprise Information Systems',
-        support_group: 'Admin-Stationery Items',
-        priority: 'High',
-        status: 'Pending'
-      }
-    ]
+    this.app.geTickets().subscribe((data: Array<TicketList>) => {
+      this.ticketList = data;
+    });
   }
 
+  rowSelected(ticket: TicketList) { 
+    this.route.navigate(['/ticketdetail', ticket]);
+  }
 }
