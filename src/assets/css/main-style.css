@@ -44,8 +44,12 @@ html, body{
 .resume-panel .table>tfoot>tr>th, 
 .resume-panel .table>thead>tr>td, 
 .resume-panel .table>thead>tr>th{
-    color: #252525;
+    color: #565050;
 }
+
+.resume-panel .profilePic{ width: 25px!important; height: 25px!important; position: relative!important; border-radius: 50%;}
+.resume-panel .nameTxt{ text-transform: uppercase;}
+.resume-panel .sec_nameTxt{ font-size: 11px;}
 
 
 .call-panel{
@@ -70,6 +74,10 @@ color: #ffffff;
 .call-counter{ font-size: 12px; padding-bottom: 20px;}
 .call-user-icon{}
 .call-animation{}
+
+table>tbody>tr>td.noRightPadding{ padding-right: 0!important;}
+table>tbody>tr>td.noLeftPadding{ padding-left: 0!important;}
+table>tbody>tr>td.noPadding{ padding-left: 0!important; padding-right: 0!important;}
 
 .call-button .fa-phone{ 
     color: #f45048;
