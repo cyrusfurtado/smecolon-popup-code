@@ -18,8 +18,14 @@ export interface Resume  {
   job_responsibilities: string,
   project: string,
   companies: string;
-  preferedTag: number;
-  isActive: boolean;
+  preferedTag?: number;
+  isActive?: boolean;
+  call_status?: CallStatus
+}
+
+enum CallStatus { 
+  pending = 'Pending',
+  complete = 'Complete'
 }
 
 @Component({
@@ -30,6 +36,8 @@ export interface Resume  {
 export class ResumelistComponent implements OnInit {
   resumes: Array<Resume>;
   naText = '--';
+  selectedResume: Resume;
+  callstatus = CallStatus;
 
   constructor(private app: AppServiceService) { }
   
@@ -46,6 +54,7 @@ export class ResumelistComponent implements OnInit {
       this.resumes = data;
       this.resumes.map((val: Resume) => {
         val.preferedTag = Math.floor(Math.random() * 4);
+        val.call_status = CallStatus.pending;
       });
     });
   }
@@ -75,7 +84,6 @@ export class ResumelistComponent implements OnInit {
     }
   }
 
-  selectedResume: Resume;
   selectResume(resume: Resume) {
     resume.isActive = true;
     this.selectedResume = resume;
@@ -83,4 +91,9 @@ export class ResumelistComponent implements OnInit {
     this.counter('start');
   }
 
+  onCallEnd() {
+    this.selectedResume.isActive = false;
+    this.selectedResume.call_status = CallStatus.complete;
+    this.counter('stop');
+  }
 }

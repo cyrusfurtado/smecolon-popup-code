@@ -1,5 +1,5 @@
 <div class="resumes-wrapper">
-    <div class="col-md-8 resume-panel">
+    <div class="col-md-9 resume-panel">
         <!-- <div class="resume-list-item">
             <div class="icon"><i class="fa fa-inbox"></i></div>
             <div class="desc">
@@ -40,7 +40,7 @@
                         Job title
                     </th>
                     <th>
-                        Qualifications
+                        Status
                     </th>
                 </tr>
             </thead>
@@ -63,27 +63,30 @@
                     <td>
                         {{ resume.jobTitle || naText }}
                     </td>
-                    <td>
-                        {{ resume.qualifications || naText }}
+                    <td class="statusTxt">
+                            <span class="status_pending" [class.complete]="resume.call_status === callstatus.complete">{{ resume.call_status }}</span>
+                            <!-- {{ resume.qualifications || naText }} -->
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <div class="col-md-4 call-panel">
-        <div *ngIf="selectedResume" class="call-details">
+    <div class="col-md-3 call-panel">
+        <div (click)="onCallEnd()" *ngIf="selectedResume" class="call-details">
             <div class="call-status">Outgoing call</div>
             <div class="call-name">{{ selectedResume.firstName || naText }} {{ selectedResume.lastName || naT
                  }}</div>
             <div class="call-counter">{{ counterText }}</div>
             <div class="call-user-icon">
                 <div class="call-animation">
-                    <img class="img-circle" src="https://placeimg.com/400/400/people" alt="" width="135"/>
+                    <div class="img-circle" >
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>                   
                 </div>
             </div>
-            <div class="call-button">
+            <!--div class="call-button">
                 <i class="fa fa-phone"></i>
-            </div>
+            </div-->
         </div>
     </div>  
 </div>
