@@ -28,7 +28,7 @@ export interface Emails {
   styleUrls: ['./emails.component.scss']
 })
 export class EmailsComponent {
-  messages = ['Verifying...', 'Initializing...', 'were almost done...'];
+  messages = ['Verifying...', 'Initializing...', 'Were almost done...'];
   modalMessage: string;
   naText = '--';
   emails: Array<Emails> = [];
@@ -117,7 +117,7 @@ export class EmailsComponent {
       setTimeout(() => {
         this.stoploading();
         this.showModal = true;
-      }, 5000); 
+      }, 3000); 
     });
   }
 
@@ -128,25 +128,23 @@ export class EmailsComponent {
   }
 
   callback() {
-    // console.log('ffsfasf', count);
+    this.app.loaderEvent.emit({hideloader: false});
     this.modalMessage = this.messages[this.pollCount] ? this.messages[this.pollCount] : this.modalMessage;
     this.app.loaderEvent.emit({hideloader: undefined, message: this.modalMessage});
+    this.app.analyzePoll().subscribe((data: any) => {
+        if(data.flag) {
+          this.stoploading();
+          this.app.noteEvent.emit({show: true, message: 'IND42942093572057209'});
+        } else {
+          this.callback();
+        }
+    });
     this.pollCount++;
   }
 
   acceptModal() {
     this.hideModal();
-
-    this.app.loaderEvent.emit({hideloader: false});
     this.callback();
-    this.pollTimer = setInterval(this.callback.bind(this), 5000);
-
-    this.app.raiseTicket().subscribe(() => {
-      setTimeout((data) => {
-        this.stoploading();
-        this.app.noteEvent.emit({show: true, message: 'IND42942093572057209'});
-      }, 15000);
-    });
   }
 
   hideModal(){
