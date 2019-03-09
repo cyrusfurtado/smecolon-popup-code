@@ -129,7 +129,7 @@
                         <div>Sender Name</div>    
                     </div>
                     <div class="button-container">
-                        <button (click)="analyzeMail()" type="button" class="btn btn-lg btn-primary">Analyze</button>
+                        <button (click)="analyzeMail()" type="button" class="btn btn-lg btn-primary AnalyseBtn">Analyse</button>
                     </div>
                 </div>
             </div>
@@ -145,18 +145,19 @@
                 <!-- <h2 class="modal-title">Modal title</h2> -->
             </div>
             <div class="modal-body">
-                <p>Do you want to rise a ticket?</p>
+                <div>analysis complete. Here are the findings: </div>
                 <div class="ticket-type-wrapper">
-                    <div>
-                        <span class="badge badge-success">Category</span>: 13
-                    </div>
-                    <div>
-                        <span class="badge badge-primary">Impact</span>: 4
-                    </div>
-                    <div>
-                        <span class="badge badge-warning">Severity</span>: 5
-                    </div>
+                        <button type="button" class="btn btn-primary">
+                                Category <span class="badge badge-primary">Human Resources Recruitment Module</span>
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                                Impact <span class="badge badge-light">4</span>
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                                Severity<span class="badge badge-warning">5</span>
+                        </button> 
                 </div>
+                <div>Do you want to rise a ticket?</div>
             </div>
             <div class="modal-footer">
                 <button (click)="hideModal()" type="button" class="btn btn-default" data-dismiss="modal">No</button>
