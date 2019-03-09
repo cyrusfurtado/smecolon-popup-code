@@ -1779,10 +1779,10 @@ td i{
 	color:#999;
 }
 td span{
-	color:#fff;
+	/*color:#fff;
 	font-size: 0.8em;
 	padding: 4px 7px;
-	font-family: 'Muli-Regular';
+	font-family: 'Muli-Regular';*/
 }
 td span.fam{
 	color:#fff;
