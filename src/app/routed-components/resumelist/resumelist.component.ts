@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppServiceService } from '../../app-service.service';
 import { RemoveSpecialCharsPipe } from '../../pipes/remove-special-chars.pipe';
 
-export interface Resume  {
+export interface Resume {
   resumeId: string,
   createdAt: string,
   title: string,
@@ -24,7 +24,7 @@ export interface Resume  {
   call_status?: CallStatus
 }
 
-enum CallStatus { 
+enum CallStatus {
   pending = 'Pending',
   complete = 'Complete'
 }
@@ -41,7 +41,7 @@ export class ResumelistComponent implements OnInit {
   callstatus = CallStatus;
 
   constructor(private app: AppServiceService, private formatString: RemoveSpecialCharsPipe) { }
-  
+
   countTimer: any;
   ngOnInit() {
     // this.app.loaderEvent.emit({hideloader: true});
@@ -50,43 +50,53 @@ export class ResumelistComponent implements OnInit {
     // setTimeout(() => {
     //   this.counter('stop');
     // }, 62000);
-    this.app.loaderEvent.emit({hideloader: false});
+    this.app.loaderEvent.emit({ hideloader: false });
     this.app.getResumes().subscribe((data: Array<Resume>) => {
       console.log('getResumes', data);
       this.resumes = data;
       this.resumes.map((val: Resume) => {
         Object.keys(val).map((key) => {
-          if(typeof val[key] === 'string'){
+          if (val[key] === '76') {
+            this.resumes[0] = val;
+            delete this.resumes[76]
+          }
+        });
+      });
+      this.resumes.map((val: Resume) => {
+        Object.keys(val).map((key) => {
+          console.log(val);
+          if (typeof val[key] === 'string') {
             val[key] = this.formatString.transform(val[key]);
           }
         });
         val.preferedTag = Math.floor(Math.random() * 4);
         val.call_status = CallStatus.pending;
-        this.app.loaderEvent.emit({hideloader: true});
+        this.app.loaderEvent.emit({ hideloader: true });
       });
+      this.selectResume(this.resumes[0]);
     });
   }
 
   counterText: string = '00:00:00';
   counter(action: string) {
     this.counterText = '00:00:00';
-    if(action === 'start') {
+    if (action === 'start') {
       const start = new Date().getTime();
 
       const cb = () => {
         const now = new Date().getTime() - start;
-  
+
         let hours: any = Math.floor((now % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         let mins: any = Math.floor((now % (1000 * 60 * 60)) / (1000 * 60));
         let secs: any = Math.floor((now % (1000 * 60)) / 1000);
-  
+
         hours = hours < 10 ? '0' + hours : hours;
         mins = mins < 10 ? '0' + mins : mins;
-        secs =  secs < 10 ? '0' + secs : secs;
+        secs = secs < 10 ? '0' + secs : secs;
         this.counterText = hours + ':' + mins + ':' + secs;
       };
 
-      this.countTimer = setInterval(cb,1000);
+      this.countTimer = setInterval(cb, 1000);
     } else {
       clearInterval(this.countTimer);
     }

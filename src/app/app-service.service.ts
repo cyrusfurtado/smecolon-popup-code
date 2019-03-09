@@ -7,7 +7,7 @@ export interface LoaderEvent {
   message?: string;
 }
 
-export interface NoteEvent{
+export interface NoteEvent {
   show: boolean;
   message: string;
 }
@@ -22,7 +22,7 @@ export class AppServiceService {
   noteEvent = new EventEmitter<NoteEvent>();
 
   constructor(private http: HttpClient) { }
-  
+
   getEmails(): Observable<any> {
     return this.http.get(`${this.apiHost}/mails`);
   }
