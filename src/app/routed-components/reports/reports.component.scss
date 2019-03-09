@@ -6,6 +6,11 @@
     /*padding: 25px 15px;*/
   }
   .report-panel{ padding: 0;}
+  .report-panel .table span{
+    color: #565050!important;
+    font-size: 0.85em;
+    font-family: 'Montserrat-Regular';
+  }
   .report-wrapper table{
     /*border-left: 1px solid #dee2e6;
     border-right: 1px solid #dee2e6;
@@ -22,3 +27,11 @@
   }
   .paginationDiv{ padding-top: 20px; text-align: right;}
   .paginationDiv nav{ float: right; margin-right: 20px; margin-bottom: 20px; }
+  .fa-times {color: #ff2500; font-size : 1.25rem;}
+  .fa-check {color: #008000; font-size : 1.25rem;}
+  .report-panel .table th{
+    text-align: center;
+  }
+  .report-panel .table td{
+    text-align: center;
+  }
