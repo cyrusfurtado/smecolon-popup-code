@@ -17,7 +17,7 @@
     
     .raised-box{
         position: relative;
-        height: 40rem;
+        height: 40rem; 
         overflow: auto;
         background-color: #fff;
         padding: 1.8em;
@@ -39,18 +39,79 @@
                 right: 1rem;
             }
             .description{
-                height: 30rem;
+                height: auto;
                 white-space: wrap;
                 overflow-x: auto;
+                padding-bottom: 50px;
+                font-size: 15px;
             }
             // height: 50rem;  
         }
         .button-container{
-            position: absolute;
+           /* position: absolute;
             bottom: 1rem;
-            right: 1.8em;
+            right: 1.8em;*/
+            float: right;
         }
     }
+}
+.noRightPadding{ padding-right: 0!important;}
+.noLeftPadding{ padding-left: 0!important;}
+.noPadding{ padding-left: 0!important; padding-right: 0!important;}
+
+.mail-emailList{ padding:0!important;}
+
+.emailList.table td, 
+.emailList.table>tbody>tr>td, 
+.emailList.table>tbody>tr>th, 
+.emailList.table>tfoot>tr>td, 
+.emailList.table>tfoot>tr>th, 
+.emailList.table>thead>tr>td, 
+.emailList.table>thead>tr>th{
+    color: #565050;
+}
+.emailList{  font-size: 14px; color: #565050;}
+.emailList .senderPic{ 
+    width: 40px!important; height: 40px!important; position: relative!important; border-radius: 50%;
+    border: 1px solid #565050;
+}
+.emailList .senderPic .fa{ color: #565050; font-size: 23px;
+    padding: 8px 10px;
+}
+.emailList .emailSender{ }
+.emailList .emailSubject{ font-weight: bold;  font-size: 14px;}
+.emailList .emailDesc{ padding-top: 5px; font-size: 13px;}
+
+.raised-box.mail-description{
+    padding: 25px 30px!important;
+    color: #565050;
+}
+.emailsender_Info{
+    border-bottom:1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.raised-box.mail-description .emailSenderName{
+    font-weight: bold;
+}
+
+.raised-box.mail-description .emailSenderId{
+    font-size: 15px;
+}
+.raised-box.mail-description .date-wrapper{
+    position: relative!important;
+    top:0!important;
+    left:0!important;
+    padding-top: 10px;
+    font-size: 13px;
+}
+.raised-box.mail-description .emailSubject {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.raised-box.mail-description .email_sign{
+    font-size: 14px;
 }
 
 .modal-wrapper{
