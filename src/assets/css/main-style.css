@@ -58,6 +58,11 @@ html, body{
 .resume-panel .sec_nameTxt{ font-size: 11px; color: #565050;}
 span.badge{ margin-right: 2px;}
 
+.statusTxt span{ font-size: 12px; font-weight: bold;}
+.status_cmplt{ color:#28a745;}
+.status_progress{ color:#ffc107;}
+.status_pending{ color: tomato;}
+
 
 .call-panel{
     background: rgba(21,122,114,1);
