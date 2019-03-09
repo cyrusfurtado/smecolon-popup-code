@@ -200,97 +200,114 @@ table>tbody>tr>td.noPadding {
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
-  .call-panel {
-    background: rgba(21, 122, 114, 1);
-    background: -moz-linear-gradient(top, rgba(21, 122, 114, 1) 0%, rgba(34, 197, 206, 1) 35%, rgba(255, 255, 255, 1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(21, 122, 114, 1)), color-stop(35%, rgba(34, 197, 206, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
-    background: -webkit-linear-gradient(top, rgba(21, 122, 114, 1) 0%, rgba(34, 197, 206, 1) 35%, rgba(255, 255, 255, 1) 100%);
-    background: -o-linear-gradient(top, rgba(21, 122, 114, 1) 0%, rgba(34, 197, 206, 1) 35%, rgba(255, 255, 255, 1) 100%);
-    background: -ms-linear-gradient(top, rgba(21, 122, 114, 1) 0%, rgba(34, 197, 206, 1) 35%, rgba(255, 255, 255, 1) 100%);
-    background: linear-gradient(to bottom, rgba(21, 122, 114, 1) 0%, rgba(34, 197, 206, 1) 35%, rgba(255, 255, 255, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#157a72', endColorstr='#ffffff', GradientType=0);
-    color: #ffffff;
+}
+
+.call-panel {
+  background: rgba(21, 122, 114, 1);
+  background: -moz-linear-gradient(top, rgba(21, 122, 114, 1) 0%, rgba(34, 197, 206, 1) 35%, rgba(255, 255, 255, 1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(21, 122, 114, 1)), color-stop(35%, rgba(34, 197, 206, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+  background: -webkit-linear-gradient(top, rgba(21, 122, 114, 1) 0%, rgba(34, 197, 206, 1) 35%, rgba(255, 255, 255, 1) 100%);
+  background: -o-linear-gradient(top, rgba(21, 122, 114, 1) 0%, rgba(34, 197, 206, 1) 35%, rgba(255, 255, 255, 1) 100%);
+  background: -ms-linear-gradient(top, rgba(21, 122, 114, 1) 0%, rgba(34, 197, 206, 1) 35%, rgba(255, 255, 255, 1) 100%);
+  background: linear-gradient(to bottom, rgba(21, 122, 114, 1) 0%, rgba(34, 197, 206, 1) 35%, rgba(255, 255, 255, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#157a72', endColorstr='#ffffff', GradientType=0);
+  color: #ffffff;
+}
+
+.call-button {}
+
+.call-details {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.call-status {
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+
+.call-name {
+  font-size: 25px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.call-counter {
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+
+.call-user-icon {}
+
+.call-animation {}
+
+.img-circle .fa {
+  color: #252525;
+  padding-top: 15px;
+  font-size: 100px;
+}
+
+table>tbody>tr>td.noRightPadding {
+  padding-right: 0 !important;
+}
+
+table>tbody>tr>td.noLeftPadding {
+  padding-left: 0 !important;
+}
+
+table>tbody>tr>td.noPadding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.call-button .fa-phone {
+  color: #f45048;
+  -ms-transform: rotate(135deg);
+  /* IE 9 */
+  -webkit-transform: rotate(135deg);
+  /* Safari 3-8 */
+  transform: rotate(135deg);
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+.call-animation {
+  background: #fff;
+  width: 145px;
+  height: 145px;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 100%;
+  border: solid 5px #fff;
+  animation: play 2s ease infinite;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+img {
+  width: 135px;
+  height: 135px;
+  border-radius: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+@keyframes play {
+  0% {
+    transform: scale(1);
   }
-  .call-button {}
-  .call-details {
-    text-align: center;
-    padding-top: 100px;
+  15% {
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
   }
-  .call-status {
-    font-size: 12px;
-    padding-bottom: 10px;
+  25% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.4), 0 0 0 20px rgba(255, 255, 255, 0.2);
   }
-  .call-name {
-    font-size: 25px;
-    font-weight: bold;
-    padding-bottom: 10px;
+  25% {
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.4), 0 0 0 30px rgba(255, 255, 255, 0.2);
   }
-  .call-counter {
-    font-size: 12px;
-    padding-bottom: 20px;
-  }
-  .call-user-icon {}
-  .call-animation {}
-  .img-circle .fa {
-    color: #252525;
-    padding-top: 15px;
-    font-size: 100px;
-  }
-  table>tbody>tr>td.noRightPadding {
-    padding-right: 0 !important;
-  }
-  table>tbody>tr>td.noLeftPadding {
-    padding-left: 0 !important;
-  }
-  table>tbody>tr>td.noPadding {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  .call-button .fa-phone {
-    color: #f45048;
-    -ms-transform: rotate(135deg);
-    /* IE 9 */
-    -webkit-transform: rotate(135deg);
-    /* Safari 3-8 */
-    transform: rotate(135deg);
-    padding: 10px;
-    border-radius: 50%;
-    font-size: 40px;
-    margin-top: 20px;
-  }
-  .call-animation {
-    background: #fff;
-    width: 145px;
-    height: 145px;
-    position: relative;
-    margin: 0 auto;
-    border-radius: 100%;
-    border: solid 5px #fff;
-    animation: play 2s ease infinite;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  img {
-    width: 135px;
-    height: 135px;
-    border-radius: 100%;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-  }
-  @keyframes play {
-    0% {
-      transform: scale(1);
-    }
-    15% {
-      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
-    }
-    25% {
-      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.4), 0 0 0 20px rgba(255, 255, 255, 0.2);
-    }
-    25% {
-      box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.4), 0 0 0 30px rgba(255, 255, 255, 0.2);
-    }
-  }
+}
