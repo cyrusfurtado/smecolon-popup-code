@@ -1,10 +1,9 @@
 <div>
     <div class="inbox-mail">
             <!-- tab content -->
-            <div class="col-md-4">
+            <div class="col-md-4 noRightPadding">
                 <!-- <div class="tab-pane active text-style" id="tab1"> -->
-                    <div class="raised-box">
-        
+                    <div class="raised-box mail-emailList">        
                         <div class="mailbox-content">
                             <div class="mail-toolbar clearfix">
                                 <div class="float-left">
@@ -77,16 +76,18 @@
                                 </div>
         
                             </div>
-                            <table class="table">
+                            <table class="table emailList">
                                 <tbody>
                                     <tr *ngFor="let email of emails" class="table-row" (click)="selectEmail(email)">
-                                        <!-- <td class="table-img">
-                                            <img src="images/in.jpg" alt="" />
-                                        </td> -->
-                                        <td class="table-text">
-                                            <h6><span class="title">From: </span>{{email.from || naText}}</h6>
-                                            <p><span class="title">Subject: </span>{{email.subjectlimited || naText}}</p>
-                                            <p><span class="title">Desc: </span>{{email.desclimited || naText}}</p>
+                                        <td class="noRightPadding"> 
+                                           <div class="senderPic">
+                                               <i class="fa fa-user" aria-hidden="true"></i> 
+                                           </div> 
+                                        </td>
+                                        <td class="table-text">                                            
+                                            <div class="emailSubject">{{email.subjectlimited || naText}}</div>
+                                            <div class="emailSender">{{email.from || naText}}</div>
+                                            <div class="emailDesc">{{email.desclimited || naText}}</div>
                                             <!-- <p>sdasnalskcnalsknal akslanlkasnasmxlaskndal skannlsdnaklnx sdnaslkdnnalxkl  xnskanax ksalx askl xksnlasnkln sdanlscalsknalsknfalnk casknalsnkalblk</p> -->
                                         </td>
                                         <!-- <td>
@@ -108,14 +109,25 @@
                 <!-- </div> -->
             </div>
             
-            <div *ngIf="selectedEmail" class="col-md-8">
+            <div *ngIf="selectedEmail" class="col-md-8 noLeftPadding">
                 <div class="raised-box mail-description">
-                    <span class="date-wrapper">{{selectedEmail.date || naText}}</span>
-                    <h6><span class="title">From: </span>{{selectedEmail.from || naText}}</h6>
-                    <h4><span class="title">Subject: </span>{{selectedEmail.subject || naText}}</h4>
+                    <div class="emailsender_Info">
+                        <div class="emailSenderName">Sender Name</div>
+                        <div class="emailSenderId">{{selectedEmail.from || naText}}</div>
+                        <div class="date-wrapper">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            {{selectedEmail.date || naText}}
+                        </div>
+                    </div>
+                    
+                    <div class="emailSubject">{{selectedEmail.subject || naText}}</div>
                     <!-- <h5><span class="title">Desc: </span></h5> -->
                     <br/>
                     <div class="description" [innerHTML]="selectedEmail.body || naText"></div>
+                    <div class="email_sign">
+                        <div>Thank you,</div>
+                        <div>Sender Name</div>    
+                    </div>
                     <div class="button-container">
                         <button (click)="analyzeMail()" type="button" class="btn btn-lg btn-primary">Analyze</button>
                     </div>
