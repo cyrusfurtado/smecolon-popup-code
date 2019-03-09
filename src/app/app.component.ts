@@ -24,7 +24,7 @@ export interface Emails {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  messages = ['message 1', 'message 2', 'message 3'];
+  messages = ['Verifying', 'Initializing', 'were done'];
   modalMessage: string;
   isAnalyzed: boolean = false;
   showPage2: boolean = false;
@@ -44,7 +44,7 @@ export class AppComponent {
           desc = htmlDoc.getElementsByTagName('p')[0].innerHTML;
         }
         catch(e) {
-          desc = '';
+          desc = email.body;
         }
         
         const ext = {
