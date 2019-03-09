@@ -1,6 +1,6 @@
 <div class="resumes-wrapper">
-    <div class="col-md-9 resume-panel" [class.disabled]="selectedResume && selectedResume.isActive">
-        <!-- <div class="resume-list-item">
+  <div class="col-md-9 resume-panel" [class.disabled]="selectedResume && selectedResume.isActive">
+    <!-- <div class="resume-list-item">
             <div class="icon"><i class="fa fa-inbox"></i></div>
             <div class="desc">
                 <div class="name"><span class="title">Name: </span>Candidate name</div>
@@ -26,74 +26,74 @@
             </div>
         </div> -->
 
-        <table class="table table-hover resume-table">
-            <thead>
-                <tr>
-                    <th colspan="2">
-                        Basic Info
-                    </th>
-                    <th width="15%">
-                        Technologies
-                    </th>
-                    <th width="20%">Tags</th>
-                    <th>
-                        Job title
-                    </th>
-                    <th>
-                        Status
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr (click)="selectResume(resume)" *ngFor="let resume of resumes" [class.active]="resume.isActive">
-                    <td>
-                        <div class="profilePic">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                        </div>
-                    </td>
-                    <td class="noLeftPadding">
-                        <div class="nameTxt">{{ resume.firstName || naText }} {{resume.lastName || naText}}</div>
-                        <div class="sec_nameTxt">{{ resume.email || naText }}</div>
-                    </td>
-                    <td>
-                        {{ resume.key_skills || naText }}
-                    </td>
-                    <td>
-                            <span *ngIf="resume.preferedTag === 0" class="badge badge-success">Most Preferred</span>    
-                            <span *ngIf="resume.preferedTag === 1" class="badge badge-primary">profile Match</span>
-                            <span *ngIf="resume.preferedTag === 2" class="badge badge-warning">same location</span>  
-                            <span *ngIf="resume.preferedTag === 3" class="badge badge-danger">Star performer</span>                                                             
-                    </td>
-                    <td>
-                        {{ resume.jobTitle || naText }}
-                    </td>
-                    <td class="statusTxt">
-                            <span class="status_pending" [class.complete]="resume.call_status === callstatus.complete">{{ resume.call_status }}</span>
-                            <!-- {{ resume.qualifications || naText }} -->
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="col-md-3 call-panel">
-        <div (click)="onCallEnd()" *ngIf="selectedResume" class="call-details">
-            <div class="call-status">Outgoing call</div>
-            <div class="call-name">{{ selectedResume.firstName || naText }} {{ selectedResume.lastName || naT
-                 }}</div>
-            <div class="call-counter">{{ counterText }}</div>
-            <div class="call-user-icon">
-                <div class="call-animation">
-                    <div class="img-circle" >
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                    </div>                   
-                </div>
+    <table class="table table-hover resume-table">
+      <thead>
+        <tr>
+          <th colspan="2">
+            Basic Info
+          </th>
+          <th>
+            Technologies
+          </th>
+          <th width="20%">Tags</th>
+          <th>
+            Job title
+          </th>
+          <th>
+            Status
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr (click)="selectResume(resume)" *ngFor="let resume of resumes" [class.active]="resume.isActive">
+          <td class="noRightPadding">
+            <div class="profilePic">
+              <i class="fa fa-user" aria-hidden="true"></i>
             </div>
-            <!--div class="call-button">
+          </td>
+          <td class="noLeftPadding">
+            <div class="nameTxt">{{ resume.firstName || naText }} {{resume.lastName || naText}}</div>
+            <div class="sec_nameTxt">{{ resume.email || naText }}</div>
+          </td>
+          <td>
+            {{ resume.key_skills || naText }}
+          </td>
+          <td>
+            <span *ngIf="resume.preferedTag === 0" class="badge badge-success">Most Preferred</span>
+            <span *ngIf="resume.preferedTag === 1" class="badge badge-primary">profile Match</span>
+            <span *ngIf="resume.preferedTag === 2" class="badge badge-warning">same location</span>
+            <span *ngIf="resume.preferedTag === 3" class="badge badge-danger">Star performer</span>
+          </td>
+          <td>
+            {{ resume.jobTitle || naText }}
+          </td>
+          <td class="statusTxt">
+            <span class="status_pending" [class.complete]="resume.call_status === callstatus.complete">{{ resume.call_status }}</span>
+            <!-- {{ resume.qualifications || naText }} -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-3 call-panel">
+    <div (click)="onCallEnd()" *ngIf="selectedResume" class="call-details">
+      <div class="call-status">Outgoing call</div>
+      <div class="call-name">{{ selectedResume.firstName || naText }} {{ selectedResume.lastName || naT }}
+      </div>
+      <div class="call-counter">{{ counterText }}</div>
+      <div class="call-user-icon">
+        <div class="call-animation">
+          <div class="img-circle">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+      <!--div class="call-button">
                 <i class="fa fa-phone"></i>
             </div-->
-        </div>
-        <div class="call-placeholder">
-            Please select a resume from the list.
-        </div>
-    </div>  
+    </div>
+    <!--div class="call-placeholder">
+      Please select a resume from the list.
+    </div-->
+  </div>
 </div>
