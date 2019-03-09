@@ -38,18 +38,19 @@ html, body{
 }
 .call-panel{
     background: rgba(21,122,114,1);
-background: -moz-linear-gradient(top, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 48%, rgba(255,255,255,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(21,122,114,1)), color-stop(48%, rgba(34,197,206,1)), color-stop(100%, rgba(255,255,255,1)));
-background: -webkit-linear-gradient(top, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 48%, rgba(255,255,255,1) 100%);
-background: -o-linear-gradient(top, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 48%, rgba(255,255,255,1) 100%);
-background: -ms-linear-gradient(top, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 48%, rgba(255,255,255,1) 100%);
-background: linear-gradient(to bottom, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 48%, rgba(255,255,255,1) 100%);
+background: -moz-linear-gradient(top, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 35%, rgba(255,255,255,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(21,122,114,1)), color-stop(35%, rgba(34,197,206,1)), color-stop(100%, rgba(255,255,255,1)));
+background: -webkit-linear-gradient(top, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 35%, rgba(255,255,255,1) 100%);
+background: -o-linear-gradient(top, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 35%, rgba(255,255,255,1) 100%);
+background: -ms-linear-gradient(top, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 35%, rgba(255,255,255,1) 100%);
+background: linear-gradient(to bottom, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 35%, rgba(255,255,255,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#157a72', endColorstr='#ffffff', GradientType=0 );
+color: #ffffff;
 
 }
 
 .call-button{
-    background-color: #f45048;
+    
 }
 .call-details{}
 .call-status{}
@@ -58,8 +59,51 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#157a72', end
 .call-user-icon{}
 .call-animation{}
 
-.call-button .fa-phone{ color: #ffffff;
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Safari 3-8 */
-    transform: rotate(90deg);
+.call-button .fa-phone{ 
+    color: #ffffff;
+    -ms-transform: rotate(130deg); /* IE 9 */
+    -webkit-transform: rotate(130deg); /* Safari 3-8 */
+    transform: rotate(130deg);
+    background-color: #f45048;
+    padding:10px;
   } 
+
+  .call-animation {
+    background: #fff;
+    width: 135px;
+    height: 135px;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 100%;
+    border: solid 5px #fff;
+    animation: play 2s ease infinite;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+}
+img {
+        width: 135px;
+        height: 135px;
+        border-radius: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+@keyframes play {
+
+    0% {
+        transform: scale(1);
+    }
+    15% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+    25% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.4), 0 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    25% {
+        box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.4), 0 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+
+}
