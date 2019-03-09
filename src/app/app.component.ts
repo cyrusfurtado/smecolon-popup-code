@@ -7,6 +7,7 @@ import { AppServiceService, LoaderEvent } from './app-service.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  showNotification = false;
   hideLoader = true;
   modalMessage: string;
 
@@ -24,6 +25,15 @@ export class AppComponent {
       }
       console.log('this.hideLoader', this.hideLoader)
       this.zone.run(() => {});
+    });
+
+    this.app.noteEvent.subscribe((status) => {
+      this.showNotification = status;
+      if(this.showNotification) {
+        setTimeout(() => {
+          this.showNotification = false;
+        }, 10000);
+      }
     });
   }
 }

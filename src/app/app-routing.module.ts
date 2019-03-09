@@ -47,7 +47,7 @@ const routes: Routes = [
     ExtcampComponent,
     ReportsComponent
   ],
-  imports: [CommonModule, RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

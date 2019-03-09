@@ -37,108 +37,45 @@
                     </th>
                     <th width="25%">Tags</th>
                     <th>
-                        Phone
+                        Job title
                     </th>
                     <th>
-                        Status
+                        Qualifications
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr (click)="selectResume(resume)" *ngFor="let resume of resumes" [class.active]="resume.isActive">
                     <td class="noRightPadding"><img class="profilePic" src="https://placeimg.com/400/400/people" alt="" width="35"/></td>
                     <td class="noLeftPadding">
-                        <div class="nameTxt">Candidate 1</div>
-                        <div class="sec_nameTxt">Candidate1@gmail.com</div>
+                        <div class="nameTxt">{{ resume.firstName || naText }} {{resume.lastName || naText}}</div>
+                        <div class="sec_nameTxt">{{ resume.email || naText }}</div>
                     </td>
                     <td>
-                        php, laravel
+                        {{ resume.key_skills || naText }}
                     </td>
                     <td>
-                        <span class="badge badge-success">Most Preferred</span>      
-                        <span class="badge badge-primary">profile Match</span>  
-                        <span class="badge badge-warning">same location</span>  
-                                                                
+                            <span *ngIf="resume.preferedTag === 0" class="badge badge-success">Most Preferred</span>    
+                            <span *ngIf="resume.preferedTag === 1" class="badge badge-primary">profile Match</span>
+                            <span *ngIf="resume.preferedTag === 2" class="badge badge-warning">same location</span>  
+                            <span *ngIf="resume.preferedTag === 3" class="badge badge-danger">Star performer</span>                                                             
                     </td>
                     <td>
-                        9856432345
+                        {{ resume.jobTitle || naText }}
                     </td>
                     <td>
-                        Completed
-                    </td>
-                </tr>
-                <tr class="active">
-                    <td class="noRightPadding"><img class="profilePic" src="https://placeimg.com/400/400/people" alt="" width="35"/></td>
-                    <td class="noLeftPadding">
-                    <div class="nameTxt">Candidate 2</div>
-                    <div class="sec_nameTxt">Candidate2@gmail.com</div>
-                    </td>
-                    <td>
-                        php, laravel
-                    </td>
-                    <td>
-                        <span class="badge badge-success">Most Preferred</span>     
-                        <span class="badge badge-primary">profile Match</span>  
-                        <span class="badge badge-danger">Star performer</span>                               
-                    </td>
-                    <td>
-                        9856432345
-                    </td>
-                    <td>
-                        In Process
-                    </td>
-                </tr>
-                <tr>
-                    <td class="noRightPadding"><img class="profilePic" src="https://placeimg.com/400/400/people" alt="" width="35"/></td>
-                    <td class="noLeftPadding">
-                        <div class="nameTxt">Candidate 3</div>
-                        <div class="sec_nameTxt">Candidate3@gmail.com</div>
-                    </td>
-                    <td>
-                        php, laravel
-                    </td>
-                    <td>
-                        <span class="badge badge-success">Most Preferred</span>    
-                        <span class="badge badge-primary">profile Match</span>
-                        <span class="badge badge-warning">same location</span>  
-                        <span class="badge badge-danger">Star performer</span>                                   
-                    </td>
-                    <td>
-                        9856432345
-                    </td>
-                    <td>
-                        pending
-                    </td>
-                </tr>
-                <tr>
-                    <td class="noRightPadding"><img class="profilePic" src="https://placeimg.com/400/400/people" alt="" width="35"/></td>
-                    <td class="noLeftPadding">
-                        <div class="nameTxt">Candidate 4</div>
-                        <div class="sec_nameTxt">Candidate4@gmail.com</div>
-                    </td>
-                    <td>
-                        php, laravel
-                    </td>
-                    <td>
-                        <span class="badge badge-success">Most Preferred</span>  
-                        <span class="badge badge-primary">profile Match</span>  
-                        <span class="badge badge-danger">Star performer</span>                                  
-                    </td>
-                    <td>
-                        9856432345
-                    </td>
-                    <td>
-                        pending
+                        {{ resume.qualifications || naText }}
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
     <div class="col-md-4 call-panel">
-        <div class="call-details">
+        <div *ngIf="selectedResume" class="call-details">
             <div class="call-status">Outgoing call</div>
-            <div class="call-name">Sujay nabar</div>
-            <div class="call-counter">00:13</div>
+            <div class="call-name">{{ selectedResume.firstName || naText }} {{ selectedResume.lastName || naT
+                 }}</div>
+            <div class="call-counter">{{ counterText }}</div>
             <div class="call-user-icon">
                 <div class="call-animation">
                     <img class="img-circle" src="https://placeimg.com/400/400/people" alt="" width="135"/>

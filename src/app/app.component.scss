@@ -23,3 +23,12 @@
         font-size: 2rem;
     }
 }
+
+.notification-container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;  
+    .reduced-width{
+        flex: 0 0 60rem;
+    }
+}
