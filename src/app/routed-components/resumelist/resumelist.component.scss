@@ -1,6 +1,7 @@
 .resumes-wrapper{
     display: flex;
     padding: 1rem;
+    height: 40rem;
     .resume-list-item{
         position: relative;
         cursor: pointer;
@@ -50,6 +51,7 @@
     }
 
     .resume-panel{
+        overflow: auto;
         &.disabled{
             pointer-events: none;
             filter: grayscale(1);
