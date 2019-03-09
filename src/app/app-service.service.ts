@@ -47,4 +47,8 @@ export class AppServiceService {
     return this.http.get(`${this.apiHost}/tickets`);
   }
 
+  getTicketDetails(id: string) {
+    return this.http.get(`${this.apiHost}/mails/${id}`);
+  }
+
 }

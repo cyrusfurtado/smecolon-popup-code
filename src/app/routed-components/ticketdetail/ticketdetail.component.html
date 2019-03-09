@@ -1,24 +1,71 @@
 
 <div class="ticket-detail-wrapper">
-  <div>
-    ID: {{ticketDetails.ticketId || naText}}
-  </div>
-  <div>
-    Created at: {{ ticketDetails.createdAt || naText }}
-  </div>
-  <div>
-    Category: {{ ticketDetails.category || naText }}
-  </div>
-  <div>
-    Sub category: {{ ticketDetails.subcategory || naText }}
-  </div>
-  <div>
-    Impact: {{ ticketDetails.impact || naText }}
-  </div>
-  <div>
-    Status: {{ ticketDetails.status || naText }}
-  </div>
-  <div>
-    Summary: {{ ticketDetails.summary || naText }}
+  <div class="pane">
+    <div class="row-1">
+      <div class="col-1">
+        ID: {{ticketDetails.ticketId || naText}}
+      </div>
+      <div class="col-2">
+        Created at: {{ ticketDetails.createdAt || naText }}
+      </div>
+    </div>
+    <div class="clear-layout"></div> 
+    <div>
+      <div>
+        Category: {{ ticketDetails.category || naText }}
+      </div>
+      <div>
+        Sub category: {{ ticketDetails.subcategory || naText }}
+      </div>
+    </div>
+
+    <div class="impact">
+      Impact: {{ ticketDetails.impact || naText }}
+    </div>
+    <div class="status">
+      Status: {{ ticketDetails.status || naText }}
+    </div>
+    <div class="summary">
+      Summary: {{ ticketDetails.summary || naText }}
+    </div>
+
+    <div class="sla">
+      {{ ticketDetails.sla || naText }}
+    </div>
+    <div class="op">
+      {{ ticketDetails.op || naText }}
+    </div>
+
+    <div class="email-details">
+      <div class="from">
+          {{ otherDetails.from || naText }}
+      </div>
+      <div class="to">
+          {{ otherDetails.to || naText }}
+      </div>
+      <div class="subject">
+        {{ otherDetails.subject || naText }}
+      </div>
+      <div class="exp">
+        <span>{{otherDetails.exp_min || naText}}</span>{{otherDetails.exp_max || naText}}<span></span>
+      </div>
+      <div class="job_responsibilities">
+        {{ otherDetails.job_responsibilities || naText }}
+      </div>
+      <div class="key_skills">
+        {{ otherDetails.key_skills || naText }}
+      </div>
+      <div class="frameworks">
+        {{ otherDetails.frameworks || naText }}
+      </div>
+      <div class="body">
+      </div>
+      <div class="certifications">
+        {{ otherDetails.certifications || naText }}
+      </div>
+      <div class="qualification">
+          {{ otherDetails.qualification || naText }}
+      </div>
+    </div>
   </div>
 </div>
