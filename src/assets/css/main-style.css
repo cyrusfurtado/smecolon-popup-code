@@ -32,3 +32,34 @@ html, body{
     height: 100%;
     background: #e1e4e7;
 }
+.resume-panel{
+    background-color: #ffffff;
+
+}
+.call-panel{
+    background: rgba(21,122,114,1);
+background: -moz-linear-gradient(top, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 48%, rgba(255,255,255,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(21,122,114,1)), color-stop(48%, rgba(34,197,206,1)), color-stop(100%, rgba(255,255,255,1)));
+background: -webkit-linear-gradient(top, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 48%, rgba(255,255,255,1) 100%);
+background: -o-linear-gradient(top, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 48%, rgba(255,255,255,1) 100%);
+background: -ms-linear-gradient(top, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 48%, rgba(255,255,255,1) 100%);
+background: linear-gradient(to bottom, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 48%, rgba(255,255,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#157a72', endColorstr='#ffffff', GradientType=0 );
+
+}
+
+.call-button{
+    background-color: #f45048;
+}
+.call-details{}
+.call-status{}
+.call-name{}
+.call-counter{}
+.call-user-icon{}
+.call-animation{}
+
+.call-button .fa-phone{ color: #ffffff;
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari 3-8 */
+    transform: rotate(90deg);
+  } 
