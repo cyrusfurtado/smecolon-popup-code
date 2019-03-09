@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppServiceService } from '../../app-service.service';
 
 @Component({
   selector: 'app-resumelist',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumelistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private app: AppServiceService) { }
 
   ngOnInit() {
+    this.app.loaderEvent.emit({hideloader: true});
   }
 
 }
