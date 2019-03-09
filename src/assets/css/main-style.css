@@ -36,6 +36,22 @@ html, body{
     background-color: #ffffff;
 
 }
+
+.resume-panel .table td, 
+.resume-panel .table>tbody>tr>td, 
+.resume-panel .table>tbody>tr>th, 
+.resume-panel .table>tfoot>tr>td,
+.resume-panel .table>tfoot>tr>th, 
+.resume-panel .table>thead>tr>td, 
+.resume-panel .table>thead>tr>th{
+    color: #565050;
+}
+
+.resume-panel .profilePic{ width: 25px!important; height: 25px!important; position: relative!important; border-radius: 50%;}
+.resume-panel .nameTxt{ text-transform: uppercase;}
+.resume-panel .sec_nameTxt{ font-size: 11px;}
+
+
 .call-panel{
     background: rgba(21,122,114,1);
 background: -moz-linear-gradient(top, rgba(21,122,114,1) 0%, rgba(34,197,206,1) 35%, rgba(255,255,255,1) 100%);
@@ -52,26 +68,32 @@ color: #ffffff;
 .call-button{
     
 }
-.call-details{}
-.call-status{}
-.call-name{}
-.call-counter{}
+.call-details{ text-align: center; padding-top: 100px;}
+.call-status{ font-size: 12px; padding-bottom: 10px;}
+.call-name{ font-size: 15px; font-weight: bold;  padding-bottom: 10px; }
+.call-counter{ font-size: 12px; padding-bottom: 20px;}
 .call-user-icon{}
 .call-animation{}
 
+table>tbody>tr>td.noRightPadding{ padding-right: 0!important;}
+table>tbody>tr>td.noLeftPadding{ padding-left: 0!important;}
+table>tbody>tr>td.noPadding{ padding-left: 0!important; padding-right: 0!important;}
+
 .call-button .fa-phone{ 
-    color: #ffffff;
-    -ms-transform: rotate(130deg); /* IE 9 */
-    -webkit-transform: rotate(130deg); /* Safari 3-8 */
-    transform: rotate(130deg);
-    background-color: #f45048;
+    color: #f45048;
+    -ms-transform: rotate(135deg); /* IE 9 */
+    -webkit-transform: rotate(135deg); /* Safari 3-8 */
+    transform: rotate(135deg);
     padding:10px;
+    border-radius: 50%;
+    font-size: 40px;
+    margin-top: 20px;
   } 
 
   .call-animation {
     background: #fff;
-    width: 135px;
-    height: 135px;
+    width: 145px;
+    height: 145px;
     position: relative;
     margin: 0 auto;
     border-radius: 100%;
