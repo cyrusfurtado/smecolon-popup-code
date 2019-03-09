@@ -52,26 +52,27 @@ color: #ffffff;
 .call-button{
     
 }
-.call-details{}
-.call-status{}
-.call-name{}
-.call-counter{}
+.call-details{ text-align: center; padding-top: 100px;}
+.call-status{ font-size: 12px; padding-bottom: 10px;}
+.call-name{ font-size: 15px; font-weight: bold; }
+.call-counter{ font-size: 12px; padding-bottom: 20px;}
 .call-user-icon{}
 .call-animation{}
 
 .call-button .fa-phone{ 
-    color: #ffffff;
-    -ms-transform: rotate(130deg); /* IE 9 */
-    -webkit-transform: rotate(130deg); /* Safari 3-8 */
-    transform: rotate(130deg);
-    background-color: #f45048;
+    color: #f45048;
+    -ms-transform: rotate(135deg); /* IE 9 */
+    -webkit-transform: rotate(135deg); /* Safari 3-8 */
+    transform: rotate(135deg);
     padding:10px;
+    border-radius: 50%;
+    font-size: 40px;
   } 
 
   .call-animation {
     background: #fff;
-    width: 135px;
-    height: 135px;
+    width: 145px;
+    height: 145px;
     position: relative;
     margin: 0 auto;
     border-radius: 100%;
