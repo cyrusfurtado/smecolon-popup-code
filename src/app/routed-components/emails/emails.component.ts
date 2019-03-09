@@ -19,6 +19,7 @@ export interface Emails {
   subjectlimited?: string;
   desc: string;
   desclimited: string;
+  active: boolean;
 }
 
 @Component({
@@ -64,7 +65,12 @@ export class EmailsComponent {
         return Object.assign({}, email, ext);
       }) : [];
 
-      this.selectEmail(this.emails[0]);
+      if(this.emails && this.emails.length) {
+        setTimeout(() => {       
+          this.selectEmail(this.emails[0]);
+        });
+      }
+
       this.app.loaderEvent.emit({hideloader: true});
     }
     this.app.getEmails().subscribe(getData);
@@ -87,6 +93,10 @@ export class EmailsComponent {
   };
 
   selectEmail(email: Emails) {
+    this.emails.map((val) => {
+      val.active = false;
+    });
+    email.active = true;
     this.selectedEmail = email;
     // console.log('selected email', this.selectedEmail);
   }
