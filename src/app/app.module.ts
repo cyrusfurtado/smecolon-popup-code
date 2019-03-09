@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LimitTextPipe } from './pipes/limit-text.pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,
