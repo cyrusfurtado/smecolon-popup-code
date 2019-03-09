@@ -1,6 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!-- <router-outlet></router-outlet> -->
-<div [hidden]="isAnalyzed">
+<!-- <div [hidden]="isAnalyzed"> -->
+<div [hidden]="true">
         <div class="inbox-mail">
                 <!-- tab content -->
                 <div class="col-md-4">
@@ -125,17 +126,79 @@
                 </div>
                 <!-- <div class="clearfix"> </div> -->
         </div>
-        
-        <div [hidden]="hideLoader" class="custom__si__loader">
-            <div class="image__container">
-            </div>
-            <div [hidden]="!modalMessage" class="loader-message">
-                {{modalMessage || naText}}
-            </div>
-        </div>
 </div>
 
-<div [hidden]="!(isAnalyzed && showPage2)">
-    List of resumes come here for now
+<!-- <div [hidden]="!(isAnalyzed && showPage2)" class="resumes-wrapper"> -->
+<div [hidden]="false" class="resumes-wrapper">
+        <div class="col-md-8">
+            <div class="resume-list-item">
+                <div class="icon"><i class="fa fa-inbox"></i></div>
+                <div class="desc">
+                    <div class="name"><span class="title">Name: </span>Candidate name</div>
+                    <div class="tech"><span class="title">Technologies: </span>python, js, php</div>
+                </div>
+                <span class="contact"><span class="title">Contact: </span>46779887987</span>
+                <span class="call-icon">Call 46779887987</span>
+            </div>
+            <div class="resume-list-item">
+                <div class="icon"><i class="fa fa-inbox"></i></div>
+                <div class="desc">
+                    <div class="name"><span class="title">Name: </span>Candidate name</div>
+                    <div class="tech"><span class="title">Technologies: </span>python, js, php</div>
+                    <span class="contact"><span class="title">Contact: </span>46779887987</span>
+                </div>
+            </div>
+            <div class="resume-list-item">
+                <div class="icon"><i class="fa fa-inbox"></i></div>
+                <div class="desc">
+                    <div class="name"><span class="title">Name: </span>Candidate name</div>
+                    <div class="tech"><span class="title">Technologies: </span>python, js, php</div>
+                    <span class="contact"><span class="title">Contact: </span>46779887987</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- <table>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Technologies
+                    </th>
+                    <th>
+                        Phone
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Candidate 1
+                    </td>
+                    <td>
+                        php, laravel
+                    </td>
+                    <td>
+                        9856432345
+                    </td>
+                    <td>
+                        pending
+                    </td>
+                </tr>
+            </tbody>
+        </table> -->
+</div>
+
+<div [hidden]="hideLoader" class="custom__si__loader">
+    <div class="image__container">
+    </div>
+    <div [hidden]="!modalMessage" class="loader-message">
+        {{modalMessage || naText}}
+    </div>
 </div>
 
