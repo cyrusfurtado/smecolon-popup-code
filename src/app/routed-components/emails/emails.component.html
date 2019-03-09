@@ -1,4 +1,4 @@
-<div>
+<div [hidden]="!(emails && emails.length)">
     <div class="inbox-mail">
             <!-- tab content -->
             <div class="col-md-4 noRightPadding">
@@ -78,7 +78,7 @@
                             </div>
                             <table class="table emailList">
                                 <tbody>
-                                    <tr *ngFor="let email of emails" class="table-row" (click)="selectEmail(email)">
+                                    <tr *ngFor="let email of emails" class="table-row" (click)="selectEmail(email)" [class.active]="email.active">
                                         <td class="noRightPadding"> 
                                            <div class="senderPic">
                                                <i class="fa fa-user" aria-hidden="true"></i> 
