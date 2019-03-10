@@ -4,6 +4,12 @@
   margin: 15px;
   box-shadow: #ccc 2px 2px;
   /*padding: 25px 15px;*/
+  .ticket-row{
+    &:hover{
+      cursor: pointer;
+      background-color: rgba(0,0,0,.075);
+    }
+  }
 }
 .ticket-panel{ padding: 0;}
 .ticket-wrapper table{
