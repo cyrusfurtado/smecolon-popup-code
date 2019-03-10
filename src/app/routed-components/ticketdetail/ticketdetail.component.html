@@ -1,71 +1,125 @@
-
+<div class="ticket_heading">Ticket Details</div>
 <div class="ticket-detail-wrapper">
   <div class="pane">
-    <div class="row-1">
-      <div class="col-1">
-        ID: {{ticketDetails.ticketId || naText}}
-      </div>
-      <div class="col-2">
-        Created at: {{ ticketDetails.createdAt || naText }}
-      </div>
-    </div>
-    <div class="clear-layout"></div> 
-    <div>
-      <div>
-        Category: {{ ticketDetails.category || naText }}
-      </div>
-      <div>
-        Sub category: {{ ticketDetails.subcategory || naText }}
-      </div>
-    </div>
+    <div class="col-md-12"></div>
+    <table class="table ticket-detail">
+      <tr>
+        <td width="25%">
+          <label class="lableclass">ID</label>
+          <span class="spanclass">{{ticketDetails.ticketId || naText}}</span>
+        </td>
+        <td width="25%">
+          <label class="lableclass">Created at</label>
+          <span class="spanclass">{{ ticketDetails.createdAt || naText }}</span>
+        </td>
+        <td width="20%">
+          <label class="lableclass"> Category</label>
+          <span class="spanclass"> {{ ticketDetails.category || naText }}</span>
+        </td>
+        <td>
+          <label class="lableclass">Sub category</label>
+          <span class="spanclass">{{ ticketDetails.subcategory || naText }}</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="lableclass">Impact</label>
+          <span class="spanclass">{{ ticketDetails.impact || naText }}</span>
+        </td>
+        <td>
+          <label class="lableclass">Status</label>
+          <span class="spanclass">{{ ticketDetails.status || naText }}</span>
+        </td>
+        <!--td>
+          <label class="lableclass">Op</label>
+          <span class="spanclass">{{ ticketDetails.op || naText }}</span>
+        </td-->
+        <td colspan="2">
+          <label class="lableclass">Date</label>
+          <span class="spanclass">{{ ticketDetails.sla || naText }}</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <label class="lableclass">Summary</label>
+          <span class="spanclass">{{ ticketDetails.summary || naText }}</span>
+        </td>
+        <td colspan="2">
+          <label class="lableclass">Skills & Frameworks:</label>
+          <span class="spanclass">
+            <div class="key_skills">
+              {{ otherDetails.key_skills || naText }}
+            </div>
+            <div class="frameworks">
+              {{ otherDetails.frameworks || naText }}
+            </div>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <label class="lableclass">Email Details</label>
+          <span class="spanclass">
+            <div class="email-details">
+              <div class="from">
+                <span class="nameTxt">From:&nbsp;</span>{{ otherDetails.from || naText }}
+              </div>
+              <div class="to">
+                <span class="nameTxt">To:&nbsp;</span>{{ otherDetails.to || naText }}
+              </div>
+              <div class="subject">
+                <span class="nameTxt">Subject:&nbsp;</span>{{ otherDetails.subject || naText }}
+              </div>
+              <div class="exp">
+                <div>
+                  <span class="nameTxt">Experience &nbsp; &nbsp;</span>
+                  <span>Min: &nbsp;</span>
+                  <span class="spanclass">{{otherDetails.exp_min || naText}}Yrs.</span>
+                  &nbsp; &nbsp; &nbsp;
+                  <span>Max:&nbsp;</span>
+                  <span class="spanclass">{{otherDetails.exp_max || naText}}Yrs.</span>
+                </div>
+              </div>
+              <div class="job_responsibilities">
+                {{ otherDetails.job_responsibilities || naText }}
+              </div>
 
-    <div class="impact">
-      Impact: {{ ticketDetails.impact || naText }}
-    </div>
-    <div class="status">
-      Status: {{ ticketDetails.status || naText }}
-    </div>
-    <div class="summary">
-      Summary: {{ ticketDetails.summary || naText }}
-    </div>
+            </div>
+          </span>
+        </td>
+        <td>
+          <span class="spanclass">
+            <label class="lableclass">Certifications & Qualification:</label>
+            <div class="certifications">
+              {{ otherDetails.certifications || naText }}
+            </div>
+            <div class="qualification">
+              {{ otherDetails.qualification || naText }}
+            </div>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <div style="text-align:right;">Checked on internal resource database, couldn't find any match at the current location. Would you like to run an
+            external Campaign?&nbsp;&nbsp;
+            <a href="#/resumelist">
+              <button class="btn btn-primary">
+                Run a Campaign
+              </button>
+            </a>
+          </div>
+        </td>
+      </tr>
+    </table>
 
-    <div class="sla">
-      {{ ticketDetails.sla || naText }}
+  </div>
+  <div class="row">
+    <div class="sla" class="col-md-3">
+
     </div>
-    <div class="op">
+    <!--div class="op">
       {{ ticketDetails.op || naText }}
-    </div>
-
-    <div class="email-details">
-      <div class="from">
-          {{ otherDetails.from || naText }}
-      </div>
-      <div class="to">
-          {{ otherDetails.to || naText }}
-      </div>
-      <div class="subject">
-        {{ otherDetails.subject || naText }}
-      </div>
-      <div class="exp">
-        <span>{{otherDetails.exp_min || naText}}</span>{{otherDetails.exp_max || naText}}<span></span>
-      </div>
-      <div class="job_responsibilities">
-        {{ otherDetails.job_responsibilities || naText }}
-      </div>
-      <div class="key_skills">
-        {{ otherDetails.key_skills || naText }}
-      </div>
-      <div class="frameworks">
-        {{ otherDetails.frameworks || naText }}
-      </div>
-      <div class="body">
-      </div>
-      <div class="certifications">
-        {{ otherDetails.certifications || naText }}
-      </div>
-      <div class="qualification">
-          {{ otherDetails.qualification || naText }}
-      </div>
-    </div>
+    </div-->
   </div>
 </div>
