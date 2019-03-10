@@ -34,7 +34,7 @@ export class AppComponent {
       if(this.showNotification) {
         setTimeout(() => {
           this.showNotification = false;
-        }, 10000);
+        }, 20000);
       }
     });
   }

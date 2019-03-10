@@ -17,7 +17,7 @@ export interface NoteEvent {
 })
 export class AppServiceService {
 
-  apiHost = 'http://10.244.25.148:4567';
+  apiHost = 'http://10.244.54.35:4567';
   loaderEvent = new EventEmitter<LoaderEvent>();
   noteEvent = new EventEmitter<NoteEvent>();
 
@@ -31,8 +31,8 @@ export class AppServiceService {
     return this.http.get(`${this.apiHost}/resumes`);
   }
 
-  analyzeEmail() {
-    return this.http.get(`${this.apiHost}/resumesAnalyse`);
+  analyzeEmail(id: string) {
+    return this.http.get(`${this.apiHost}/resumesAnalyse/${id}`);
   }
 
   analyzePoll() {

@@ -115,7 +115,7 @@ export class EmailsComponent {
   analyzeResponse;
   analyzeMail() {
     this.app.loaderEvent.emit({hideloader: false});
-    this.app.analyzeEmail().subscribe((data) => {
+    this.app.analyzeEmail(this.selectedEmail ? this.selectedEmail.mailId : '').subscribe((data) => {
       this.analyzeResponse = data;
       this.stoploading();
       this.showModal = true;
@@ -155,7 +155,7 @@ export class EmailsComponent {
 
     setTimeout(() => {
       this.stopPolling();
-    }, 30000);
+    }, 40000);
   }
 
   hideModal(){

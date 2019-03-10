@@ -150,7 +150,7 @@
                             </tr>
                             <tr>
                                 <td>Sub-category</td>
-                                <td>Recruitment</td>
+                                <td>{{ analyzeResponse.category == 13 ? 'Recruitment' : 'Procurement' }}</td>
                             </tr>
                             <tr>
                                 <td>Impact</td>
@@ -162,7 +162,7 @@
                             </tr>
                         </table> 
                 </div>
-                <div class="modalQuestion">Do you want to rise a ticket?</div>
+                <div class="modalQuestion">Do you want to raise a ticket?</div>
             </div>
             <div class="modal-footer">
                 <button (click)="hideModal()" type="button" class="btn btn-default" data-dismiss="modal">No</button>
