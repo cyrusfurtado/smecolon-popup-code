@@ -111,13 +111,13 @@ export class EmailsComponent {
 
   pollTimer;
   pollCount = 0;
+  analyzeResponse;
   analyzeMail() {
     this.app.loaderEvent.emit({hideloader: false});
-    this.app.analyzeEmail().subscribe(() => {
-      setTimeout(() => {
-        this.stoploading();
-        this.showModal = true;
-      }, 3000); 
+    this.app.analyzeEmail().subscribe((data) => {
+      this.analyzeResponse = data;
+      this.stoploading();
+      this.showModal = true;
     });
   }
 
