@@ -143,10 +143,10 @@
             <div class="modal-body">
                 <div>Analysis complete. Here are the findings: </div>
                 <div class="ticket-type-wrapper">
-                        <table class="table">
+                        <table *ngIf="analyzeResponse" class="table">
                             <tr>
                                 <td>Category</td>
-                                <td>Human Resources</td>
+                                <td> {{ analyzeResponse.category == 13 ? 'Human Resources' : 'IT/Hardware' }}</td>
                             </tr>
                             <tr>
                                 <td>Sub-category</td>
@@ -154,11 +154,11 @@
                             </tr>
                             <tr>
                                 <td>Impact</td>
-                                <td>4</td>
+                                <td>{{analyzeResponse.impact}}</td>
                             </tr>
                             <tr>
                                 <td>Severity</td>
-                                <td>5</td>
+                                <td>{{analyzeResponse.severity}}</td>
                             </tr>
                         </table> 
                 </div>

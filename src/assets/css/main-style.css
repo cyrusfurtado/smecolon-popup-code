@@ -283,7 +283,7 @@ table>tbody>tr>td.noPadding {
   backface-visibility: hidden;
 }
 
-img {
+img.img-circle {
   width: 135px;
   height: 135px;
   border-radius: 100%;

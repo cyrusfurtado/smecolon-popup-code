@@ -5,6 +5,7 @@ import { LimitTextPipe } from '../../pipes/limit-text.pipe';
 import { RemoveSpecialCharsPipe } from '../../pipes/remove-special-chars.pipe';
 import { TitlecasePipe } from '../../pipes/titlecase.pipe';
 import * as moment from 'moment';
+import { Subscription } from 'rxjs';
 
 export interface Emails {
   mailId: string;
@@ -111,13 +112,13 @@ export class EmailsComponent {
 
   pollTimer;
   pollCount = 0;
+  analyzeResponse;
   analyzeMail() {
     this.app.loaderEvent.emit({hideloader: false});
-    this.app.analyzeEmail().subscribe(() => {
-      setTimeout(() => {
-        this.stoploading();
-        this.showModal = true;
-      }, 3000); 
+    this.app.analyzeEmail().subscribe((data) => {
+      this.analyzeResponse = data;
+      this.stoploading();
+      this.showModal = true;
     });
   }
 
@@ -127,14 +128,14 @@ export class EmailsComponent {
     this.app.loaderEvent.emit({hideloader: true});
   }
 
+  analyzeSub: Subscription;
   callback() {
     this.app.loaderEvent.emit({hideloader: false});
     this.modalMessage = this.messages[this.pollCount] ? this.messages[this.pollCount] : this.modalMessage;
     this.app.loaderEvent.emit({hideloader: undefined, message: this.modalMessage});
-    this.app.analyzePoll().subscribe((data: any) => {
+    this.analyzeSub = this.app.analyzePoll().subscribe((data: any) => {
         if(data.flag) {
-          this.stoploading();
-          this.app.noteEvent.emit({show: true, message: 'IND42942093572057209'});
+          this.stopPolling();
         } else {
           this.callback();
         }
@@ -142,9 +143,19 @@ export class EmailsComponent {
     this.pollCount++;
   }
 
+  stopPolling() {
+    this.stoploading();
+    this.app.noteEvent.emit({show: true, message: 'IND42942093572057209'});
+    this.analyzeSub.unsubscribe();
+  }
+
   acceptModal() {
     this.hideModal();
     this.callback();
+
+    setTimeout(() => {
+      this.stopPolling();
+    }, 30000);
   }
 
   hideModal(){
