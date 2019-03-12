@@ -4,7 +4,7 @@
     <div class="image__container">
     </div>
     <div [hidden]="!modalMessage" class="loader-message">
-        {{modalMessage || naText}}
+        {{modalMessage}}
     </div>
 </div>
 <div [ngStyle]="{'display': showNotification ? null : 'none'}" class="notification-container">
